@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="AIGC小小仓库">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://localhost:1313//img/home-bg-jeep.jpg">
+    <meta property="twitter:image" content="http://localhost:1313//img/home-bg-jeep.jpg" />
+    
+
+    
+    <meta name="title" content="" />
+    <meta property="og:title" content="" />
+    <meta property="twitter:title" content="" />
+    
+
+    
+    <meta name="description" content="我，无业游民, 安静内向，追求偏爱 | 这里是 Gray 的博客，与你一起探索虚拟世界。">
+    <meta property="og:description" content="我，无业游民, 安静内向，追求偏爱 | 这里是 Gray 的博客，与你一起探索虚拟世界。" />
+    <meta property="twitter:description" content="我，无业游民, 安静内向，追求偏爱 | 这里是 Gray 的博客，与你一起探索虚拟世界。" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Gray,网络日志, 博客, Blog,个人网站,AI, comfyui初体验, 生活, 学习, 美食, 日常">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>人生初体验 </title>
+
+    <link rel="canonical" href="/about/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">AIGC小小仓库</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/syntax/">syntax</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tech/">tech</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/themes/">themes</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/tips/">tips</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E4%BA%BA%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/">人视频生成</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E6%96%87%E7%94%9F%E5%9B%BE/">文生图</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/">美食日记</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/scence//">美景日记</a></li>
+                    
+                        <li><a href="/about//">关于我</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>AIGC小小仓库 </h1>
+                    
+		    <span class="subheading">世态百般炎凉，活在当下就好</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <div class="
+            col-lg-8 col-lg-offset-1
+            col-md-8 col-md-offset-1
+            col-sm-12
+            col-xs-12
+            post-container">
+            
+                 
+ <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 | Chinese </option>
+    <option value="1"> 英文 | English </option>
+</select>
+
+                
+                <div class="zh post-container">
+                    
+                    <h2 id="关于我">关于我</h2>
+<p>Hello，我叫甜甜圈，因为超级喜欢甜食，是一位20出头的研究生女孩。我的动漫版自拍就在右侧，更多详情加Q了解。（由于也是一位动漫粉加上腼腆害羞的性格，就把自己的自拍转成这种格式啦）</p>
+<h2 id="内容简介">内容简介</h2>
+<p>第一次使用这样的形式写博客，还不知道应该写些什么内容，那就记录一下我的生活日常和学习生活吧！（当然应该是生活琐事比较多啦，毕竟我的学习不好，我的导师距离我们很远……就不在这里吐槽我的导师了，说来扫大家的兴，有想了解详情或者导师避雷的友友可以点击点击这里：我的烦心事）</p>
+<h2 id="创作目的">创作目的</h2>
+<h3 id="为美景点赞">为美景点赞</h3>
+<p>我来自中国的西部小城市———成都。从0-18岁，我一直呆在这座城市，和这座成一起茁壮成长。18-22岁，我离开家乡，来到野生大熊猫的发源地———四川省雅安市，孤苦求学。22岁至今，我又辗转来到8D魔幻城市———重庆，继续孤苦求学。在一座座陌生的新城市里，常常感到自己渺小无助与迷茫，加上自己腼腆胆小内向的性格，我害怕别人不会接纳自己，所以我的烦恼不知向谁去述说。但是当我迈开脚步，把课余时间全部用在徒步旅游上时；当我逃离快节奏的压抑生活，看到大自然的雄伟壮阔时；我发现大自然的美丽是能够淡化烦恼的；大自然平等地对待每一个生命，不分高低贵贱。我想把我看到的美景美物分享于此，提醒孤单的自己，无论天涯海角，大自然都在你的身边陪伴着你度过难关度过黑夜！</p>
+<h3 id="为美食点赞">为美食点赞</h3>
+<p>民以食为天！美食在人类生活中扮演着多重重要的角色，它不仅是满足基本生理需求的方式，更是一种文化和情感的表达。我在踏遍陌生城市的同时，一定不会错过当地所有的地道美食！（毕竟要留在那里好几年嘛！有的是时间！）
+这里小编就想给友友们道道自己为什么喜欢吃甜食了，因为它能让我想起童年的甜蜜记忆；它还能够迅速被人体吸收，进入血液后会刺激大脑释放多巴胺，并且多巴胺是一种与愉悦和奖赏感相关的神经递质；吃甜食还可能刺激大脑释放内啡肽，而内啡肽是一种天然的镇痛剂，能够产生放松和愉悦的效果；最后大脑的奖励系统非常容易被高热量的甜食激活产生愉悦感。（恶性科普时间）
+在离家的日子里，我变得特别珍惜生活里点点滴滴小聚餐，因为许多小确幸都是由突如其来的小聚餐开始，而无依无靠的游子能攒下来的快乐不多；我也变得特别感激我家爸妈给我做的每道菜，那里包藏着家乡、童年的回忆。我终于明白除了他们，世界上不好再有人那么的爱我了，我也明白他们正在渐渐的老去……我同样也开始学着做他们爱吃的或者买他们爱吃的，一同分享……用相机记录捕捉生活每一份小确幸，去提醒自己，生活总有美好，请好好珍惜！</p>
+<h3 id="让美事铭记">让美事铭记</h3>
+<p>回望过去，如果从金钱、成就的角度来说，我普普通通，一事无成，没有关键节点没有美食须铭记。但是我是性情中人，怀着一颗感恩的心。我深知世态极炎凉，暖心之事极珍稀！我感激曾对我好的每一个人，我得记录每一份感动，永存心尖，去告诉自己“忧郁的日子里须要镇静，相信吧，快乐的日子将会来临……”</p>
+<h3 id="愿美梦成真">愿美梦成真</h3>
+<p>愿望说出来就不灵了！那就写下来，藏在许愿箱里！</p>
+<h3 id="把烦恼埋葬">把烦恼埋葬</h3>
+<p>磕磕绊绊20多年，糗事烦恼是数不胜数。真心发现写出来，吐槽一波好一些！那就谢谢了埋葬在烦恼箱里！</p>
+<h2 id="成为我的朋友">成为我的朋友</h2>
+<p>QQ： 2138205939</p>
+<h2 id="文末彩蛋">文末彩蛋</h2>
+<p>世态百般炎凉，活在当下就好！！！<br>
+《假如生活欺骗了你》<br>
+普希金<br>
+假如生活欺骗了你，<br>
+不要悲伤，不要心急！<br>
+忧郁的日子里须要镇静：<br>
+相信吧，快乐的日子将会来临！</p>
+<p>心儿永远向往着未来；<br>
+现在却常是忧郁。<br>
+一切都是瞬息，一切都将会过去；<br>
+而那过去了的，就会成为亲切的怀恋。</p>
+
+                </div>
+            
+                
+                <div class="en post-container">
+                    <h2 id="about-me">About Me</h2>
+<p>Hello, my name is Donut, a girl in her early 20s who loves sweets and is a graduate student. My anime-style self-portrait is on the right, and you can add me on QQ for more details. (Since I&rsquo;m also an anime fan and have a shy personality, I&rsquo;ve turned my self-portrait into this format.)</p>
+<h2 id="content-summary">Content Summary</h2>
+<p>This is my first time writing a blog in this format, and I&rsquo;m not quite sure what to write about, so I&rsquo;ll just document my daily life and academic experiences! (Of course, there will be more trivial matters of daily life, after all, my studies aren&rsquo;t going well, and my mentor is far away from us&hellip; I won&rsquo;t complain about my mentor here, as it might dampen everyone&rsquo;s spirits. For those who want to know more details or avoid certain mentors, friends can click here: My Troubles)</p>
+<h2 id="purpose-of-the-website">Purpose of the website</h2>
+<h3 id="give-a-thumbs-up-for-the-beautiful-scenery">Give a thumbs up for the beautiful scenery</h3>
+<p>I come from a small city in the western part of China — Chengdu. From the age of 0 to 18, I grew up in this city, thriving alongside it. From 18 to 22, I left my hometown and went to Ya&rsquo;an City in Sichuan Province, the birthplace of the giant panda, to study alone. Since turning 22, I have moved to the 8D magical city of Chongqing to continue my solitary academic journey. In these unfamiliar new cities, I often feel small, helpless, and lost, and with my shy, timid, and introverted personality, I fear that others may not accept me, so I don&rsquo;t know to whom I can confide my troubles. However, when I step out and spend all my spare time hiking and traveling; when I escape the fast-paced, oppressive life and witness the grandeur of nature; I find that the beauty of nature can dilute my worries; nature treats every life equally, without distinction of status or rank. I want to share the beautiful scenes and things I&rsquo;ve seen here, to remind my lonely self that no matter where I am, nature is always by your side, accompanying you through the difficulties and the dark nights!</p>
+<h3 id="give-a-thumbs-up-for-the-delicious-food">Give a thumbs up for the delicious food</h3>
+<p>Food is the foremost necessity of the people! Delectable cuisine plays a multifaceted and significant role in human life; it&rsquo;s not only a means to satisfy basic physiological needs but also an expression of culture and emotion. As I explore unfamiliar cities, I make sure not to miss out on all the authentic local delicacies! (After all, I&rsquo;ll be living there for several years! There&rsquo;s plenty of time!)</p>
+<p>Then, I&rsquo;d like to share with my friends why I love sweets. They remind me of the sweet memories of my childhood; they can be quickly absorbed by the body, enter the bloodstream, and stimulate the brain to release dopamine, which is a neurotransmitter associated with pleasure and reward; indulging in sweets may also prompt the brain to release endorphins, a natural analgesic that can produce relaxation and happiness; finally, the brain&rsquo;s reward system is easily activated by high-calorie sweets, generating a sense of pleasure. (It&rsquo;s time for some not-so-fun science.)</p>
+<p>In the days away from home, I&rsquo;ve become especially cherishing of every little gathering in life, because many small blessings start with unexpected little meals, and there&rsquo;s not much joy that a helpless wanderer can accumulate; I&rsquo;ve also become particularly grateful for every dish my parents cooked for me, which contains memories of my hometown and childhood. I finally understand that there&rsquo;s no one in the world who loves me as much as they do, and I realize they are gradually growing old&hellip; I&rsquo;ve also started learning to cook their favorite dishes or buy what they love to eat, to share together&hellip; Capturing every small blessing in life with a camera serves as a reminder to myself that life is always full of beauty, please cherish it!</p>
+<h3 id="let-the-beautiful-moments-be-remembered">Let the beautiful moments be remembered</h3>
+<p>Looking back, if judged by money and achievements, I am just an ordinary person, with no significant accomplishments or memorable feasts. But I am a person of character, with a heart full of gratitude. I am well aware of the coldness of the world, and how rare are the warm-hearted deeds! I am grateful to everyone who has been kind to me, and I must record every touch of emotion, keeping it forever in my heart, to remind myself, &ldquo;In days of melancholy, be calm; believe, happy days will come&hellip;&rdquo;</p>
+<h3 id="make-dreams-come-true">Make Dreams Come True</h3>
+<p>If you speak your wishes out loud, they might not come true! So write them down and hide them in a wish box!</p>
+<h3 id="bury-the-worries">Bury the Worries</h3>
+<p>After more than 20 years of stumbling and bumbling, there are countless embarrassing moments and troubles. I&rsquo;ve sincerely found that writing them out and venting a bit can be helpful! So, thank you for burying them in the box of worries!</p>
+<h2 id="to-be-my-friend">To Be My Friend</h2>
+<p>My QQ： 2138205939</p>
+<h2 id="open-source-projects">Open Source Projects</h2>
+<p>The world is full of various ups and downs, just live in the present!!!<br>
+If by Life You Were Deceived
+Pushkin</p>
+<p>If by life you were deceived,<br>
+Don&rsquo;t be dismal, don&rsquo;t be wild!<br>
+In the day of grief, be mild:<br>
+Merry days will come, believe!</p>
+<p>Heart is living in tomorrow;<br>
+Present is dejected here;<br>
+In a moment, passes sorrow;<br>
+That which passes will be dear.</p>
+
+                </div>
+            
+             
+            
+
+
+            
+            </div>
+            
+            
+
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+	
+    <section class="visible-md visible-lg">
+	
+        <div class="short-about">
+            
+            <a href="/about">
+               <img src="/img/me.png" alt="avatar" style="cursor: pointer" />
+            </a>
+            
+            
+                <p>我的自画像虚拟版</p>
+            
+           
+           <ul class="list-inline">
+               
+               <li>
+                   <a href="mailto:youremail@gmail.com">
+                      <span class="fa-stack fa-lg">
+                          <i class="fa fa-circle fa-stack-2x"></i>
+                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                      </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               <li>
+                   <a target="_blank" href="https://github.com/yourgithub">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+               
+               <li>
+                   <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
+                       <span class="fa-stack fa-lg">
+                           <i class="fas fa-circle fa-stack-2x"></i>
+                           <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                       </span>
+                   </a>
+               </li>
+               
+               
+               
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+            
+            
+            
+               
+               
+               
+               
+                </ul>
+            </div>
+    </section>
+	
+    
+    
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FEATURED TAGS</h5>
+        <div class="tags">
+            
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+            
+               
+                    <a href="/tags/istio" title="istio">
+                        istio
+                    </a>
+               
+            
+               
+                    <a href="/tags/kubernetes" title="kubernetes">
+                        kubernetes
+                    </a>
+               
+            
+               
+            
+               
+                    <a href="/tags/microservice" title="microservice">
+                        microservice
+                    </a>
+               
+            
+               
+            
+               
+                    <a href="/tags/security" title="security">
+                        security
+                    </a>
+               
+            
+               
+                    <a href="/tags/service-mesh" title="service mesh">
+                        service mesh
+                    </a>
+               
+            
+               
+            
+               
+                    <a href="/tags/tips" title="tips">
+                        tips
+                    </a>
+               
+            
+               
+                    <a href="/tags/ubuntu" title="ubuntu">
+                        ubuntu
+                    </a>
+               
+            
+               
+            
+               
+            
+        </div>
+    </section>
+    
+
+    
+    
+    <section>
+        <hr class="hidden-sm hidden-xs">
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+            
+            <li><a target="_blank" href="https://zhaozhihan.com">Linda的博客</a></li>
+            
+        </ul>
+    </section>
+    
+    
+</div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:youremail@gmail.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    <li>
+                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/yourgithub">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="AIGC小小仓库" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; AIGC小小仓库 2024
+                    
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<script type="text/javascript">
+    
+    var $zh = document.querySelector(".zh");
+    var $en = document.querySelector(".en");
+    var $select = document.querySelector("select");
+
+    
+    function getLang() { return new URLSearchParams(document.location.search).get("lang") }
+
+    function setLang(newLang) {
+        var params = new URLSearchParams(document.location.search)
+        params.set("lang", newLang)
+        document.location.search = params.toString()  
+    }
+
+    
+    function _render() {
+        var lang = getLang()
+        
+        if (lang == "en") {
+            $select.selectedIndex = 1;
+            $en.style.display = "block";
+            $en.classList.add("active");
+            $zh.style.display = "none";
+            $zh.classList.remove("active");
+            
+        } else {
+            $select.selectedIndex = 0;
+            $zh.style.display = "block";
+            $zh.classList.add("active");
+            $en.style.display = "none";
+            $en.classList.remove("active");
+        }
+        
+        generateCatalog(".catalog-body");
+    }
+
+    
+    function onLanChange(index) {
+        if (index == 0) {
+            lang = "zh"
+        } else {
+            lang = "en"
+        }
+        setLang(lang)
+    }
+
+    
+    _render();
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>美食日记 on AIGC小小仓库</title>
+    <link>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</link>
+    <description>Recent content in 美食日记 on AIGC小小仓库</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>双皮奶零基础制作教程</title>
+      <link>http://localhost:1313/food2/</link>
+      <pubDate>Sat, 24 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/food2/</guid>
+      <description>第一步制作面饼坯子 盆中500克面粉里面加入3克酵母粉，加入10克白砂糖，加入2克食用盐，打入三个鸡蛋黄，加入适量温水搅拌成面团。使用保鲜膜密</description>
+    </item>
+    <item>
+      <title>披萨零基础制作教程</title>
+      <link>http://localhost:1313/food1/</link>
+      <pubDate>Fri, 23 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/food1/</guid>
+      <description>第一步制作面饼坯子 盆中500克面粉里面加入3克酵母粉，加入10克白砂糖，加入2克食用盐，打入三个鸡蛋黄，加入适量温水搅拌成面团。使用保鲜膜密</description>
+    </item>
+  </channel>
+</rss>
