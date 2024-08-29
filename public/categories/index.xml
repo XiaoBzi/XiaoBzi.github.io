@@ -16,6 +16,13 @@
       <description></description>
     </item>
     <item>
+      <title>我的工作</title>
+      <link>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</link>
+      <pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Syntax</title>
       <link>http://localhost:1313/categories/syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
@@ -27,34 +34,6 @@
       <link>http://localhost:1313/categories/themes/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/themes/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tech</title>
-      <link>http://localhost:1313/categories/tech/</link>
-      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/tech/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tips</title>
-      <link>http://localhost:1313/categories/tips/</link>
-      <pubDate>Thu, 24 May 2018 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/tips/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>文生图</title>
-      <link>http://localhost:1313/categories/%E6%96%87%E7%94%9F%E5%9B%BE/</link>
-      <pubDate>Sat, 04 Nov 2017 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E6%96%87%E7%94%9F%E5%9B%BE/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>人视频生成</title>
-      <link>http://localhost:1313/categories/%E4%BA%BA%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E4%BA%BA%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/</guid>
       <description></description>
     </item>
   </channel>

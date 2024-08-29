@@ -106,9 +106,9 @@ home = ["HTML", "RSS", "Algolia"]
   href = "https://unsplash.com"
   
   [[params.addtional_menus]]
-  title =  "美景日记"
-  href =  "/scence/"
-  
+  title =  "我的歌单"
+  href =  "/songs/"
+
   [[params.addtional_menus]]
   title =  "关于我"
   href =  "/about/"
