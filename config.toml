@@ -56,7 +56,7 @@ home = ["HTML", "RSS", "Algolia"]
   twikoo_env_id = ""
 
   #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
-  reward = true 
+  #reward = true 
   # reward_guide = "如果这篇文章对你有用,请随意打赏" 
 
   friends = true
@@ -69,7 +69,7 @@ home = ["HTML", "RSS", "Algolia"]
 
   [params.social]
   rss            = true 
-  email          = "youremail@gmail.com"
+  email          = "2138205929@qq.com"
   #facebook      = "full profile url in facebook"
   #googleplus    = "full profile url in googleplus"
   #twitter       = "full profile url in twitter"
@@ -89,21 +89,21 @@ home = ["HTML", "RSS", "Algolia"]
   #git           = "full profile url for git user"
   
   [[params.friend_link]]
-  title = "Linda的博客"
-  href =  "https://zhaozhihan.com"
+  title = "加我为好友：2138205929"
+  href =  "https://im.qq.com/index/"
 
   [[params.bookmark_link]]
   title =  "Martin Fowler"
-  href =  "https://martinfowler.com"
+  href =  "https://github.com/yourgithub"
   [[params.bookmark_link]]
   title = "ServiceMesher"
-  href =  "http://www.servicemesher.com"
+  href =  "https://github.com/yourgithub"
   [[params.bookmark_link]]
   title =  "Pxhere"
-  href = "https://pxhere.com"
+  href = "https://github.com/yourgithub"
   [[params.bookmark_link]]
   title = "unsplash"
-  href = "https://unsplash.com"
+  href = "https://github.com/yourgithub"
   
   [[params.addtional_menus]]
   title =  "我的歌单"

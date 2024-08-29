@@ -1,4 +1,4 @@
-baseurl = "https://zhaohuabing.com"
+baseurl = "https://xiaobzi.github.io/|"
 title = "Huabing Blog"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"

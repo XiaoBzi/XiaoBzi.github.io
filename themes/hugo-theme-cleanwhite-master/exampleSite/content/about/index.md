@@ -21,12 +21,6 @@ While he is free, he likes writing technical blog posts, watching movies, swimmi
 Feel free to connect Huabing at Github and Linkedin, leave your thoughts in his blog or share your ideas by [writing him an email](mailto:zhaohuabing@zhaohuabing.com). 
 
 ## Publications
-| Title       |Type        |Publisher   |Link        |
-| ----------- |----------- |----------- |----------- |
-|[Istio Service Mesh Advanced Practical](https://www.zhaohuabing.com/post/2021-08-26-istio-handbook/)|Book|电子工业出版社|[Buy now](https://item.jd.com/13200745.html)|
-|[Distributed Tracing with Jaeger, Kubernetes, and Istio](https://www.zhaohuabing.com/post/2021-09-08-distributed-tracing-with-jaeger-kubernetes-and-istio/)|Live Project|Manning|[30% off](https://www.manning.com/liveprojectseries/distributed-tracing-ser)|
-|[Cloud Native Data Center Networking](https://zhaohuabing.com/post/2021-08-27-cloud-native-data-center)|Translation|中国电力出版社|[Buy now](https://item.jd.com/12929975.html)|
-|[Istio Operation Bible](http://localhost:1313/post/2021-10-08-istio-operation-bible/)|ebook||[Read online](https://istio-operation-bible.aeraki.net/)|
 
 
 ## Presentations (Selected)
