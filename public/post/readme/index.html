@@ -10,8 +10,8 @@
     <meta property="og:type" content="article">
 
     
-    <meta property="og:image" content="https://img.zhaohuabing.com/post-bg-2015.jpg">
-    <meta property="twitter:image" content="https://img.zhaohuabing.com/post-bg-2015.jpg" />
+    <meta property="og:image" content="https://img.zhaodemo.com/post-bg-2015.jpg">
+    <meta property="twitter:image" content="https://img.zhaodemo.com/post-bg-2015.jpg" />
     
 
     
@@ -168,7 +168,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('https://img.zhaohuabing.com/post-bg-2015.jpg')
+        background-image: url('https://img.zhaodemo.com/post-bg-2015.jpg')
     }
 </style>
 
@@ -217,7 +217,7 @@
 
                 
                 <h1 id="clean-white-theme-for-hugo">Clean White Theme for Hugo</h1>
-                <a href="https://xiaobzi.github.io/">demo</a> |
+<p>CleanWhite is a clean, elegant, but fully functional blog theme for Hugo. Here is a live <a href="https://xiaobzi.github.io">demo site</a> using this theme.</p>
 <p>It is based on <a href="https://github.com/Huxpro/huxpro.github.io">huxblog Jekyll Theme</a>
 and <a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll">Clean Blog Jekyll Theme</a>.</p>
 <p>These two upstream projects have done awesome jobs to create a blog theme, what I&rsquo;m doing here is porting it to Hugo, of which I like the simplicity and the much faster compiling speed. Some other features which I think could be useful, such as site search with algolia and proxy for Disqus access in China, have also been built in the CleanWhite theme. Other fancy features of upstream projects are not supported by this Hugo theme, I&rsquo;d like to make it as simple as possible and only focus on blog purpose, at least for now.
@@ -252,25 +252,25 @@ While I created this theme, I followed the Hugo theme best practice and tried to
 <p>Go to the directory where you have your Hugo site and run:</p>
 <pre tabindex="0"><code>$ mkdir themes
 $ cd themes
-$ git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+$ git clone https://github.com/zhaodemo/hugo-theme-cleanwhite.git
 </code></pre><p>If your site is already a git project, you may want to choose to add the cleanwhite theme as a submodule to avoid messing up your existing git repository.</p>
 <pre tabindex="0"><code>$ mkdir themes
-$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+$ git submodule add https://github.com/zhaodemo/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
 </code></pre><p>Run  Hugo Build-in Server Locally</p>
 <pre tabindex="0"><code>$ hugo serve -t  hugo-theme-cleanwhite
 </code></pre><p>Now enter <a href="http://localhost:1313"><code>localhost:1313</code></a> in the address bar of your browser.</p>
-<p>If you start from scratch, there is a working Hugo site configured with the CleanWhite theme in the <a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite/tree/master/exampleSite">exampleSite</a> directory.  You can use it as a starting point for your site.</p>
+<p>If you start from scratch, there is a working Hugo site configured with the CleanWhite theme in the <a href="https://github.com/zhaodemo/hugo-theme-cleanwhite/tree/master/exampleSite">exampleSite</a> directory.  You can use it as a starting point for your site.</p>
 <p>For more information read the official <a href="https://gohugo.io/overview/installing/">setup guide</a> of Hugo</p>
 <h2 id="configuration">Configuration</h2>
-<p>First, let&rsquo;s take a look at the <a href="https://github.com/zhaohuabing/hugo-cleanwhite-theme/tree/master/exampleSite/config.toml">config.toml</a>. It will be useful to learn how to customize your site. Feel free to play around with the settings.</p>
+<p>First, let&rsquo;s take a look at the <a href="https://github.com/zhaodemo/hugo-cleanwhite-theme/tree/master/exampleSite/config.toml">config.toml</a>. It will be useful to learn how to customize your site. Feel free to play around with the settings.</p>
 <h3 id="comments">Comments</h3>
 <p>The optional comments system is powered by <a href="https://disqus.com">Disqus</a>. If you want to enable comments, create an account in Disqus and write down your shortname.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>disqusShortname = <span style="color:#f1fa8c">&#34;your-disqus-short-name&#34;</span>
 </span></span></code></pre></div><p>You can disable the comments system by leaving the <code>disqusShortname</code> empty.</p>
 <h3 id="disqus-in-china">Disqus in China</h3>
-<p>Disqus is inaccessible in China. To get it to work, we can set up a proxy with <a href="https://github.com/zhaohuabing/disqus-php-api">disqus-php-api</a> in a host which sets between the client browser and the Disqus server. The idea is that if Disqus can be reached in the guest network, the blog page will show the original Disqus comments UI, otherwise, it will downgrade and use the proxy to access the Disqus, the UI will be a little different, but the visitors can still write their comments on the page.</p>
+<p>Disqus is inaccessible in China. To get it to work, we can set up a proxy with <a href="https://github.com/zhaodemo/disqus-php-api">disqus-php-api</a> in a host which sets between the client browser and the Disqus server. The idea is that if Disqus can be reached in the guest network, the blog page will show the original Disqus comments UI, otherwise, it will downgrade and use the proxy to access the Disqus, the UI will be a little different, but the visitors can still write their comments on the page.</p>
 <p>The client side java script has already been integrated to CleanWhite them, but you need to set up a proxy server yourself.</p>
-<p>The proxy is written in php, which can be found here: <a href="https://github.com/zhaohuabing/disqus-php-api/tree/master/api">https://github.com/zhaohuabing/disqus-php-api/tree/master/api</a></p>
+<p>The proxy is written in php, which can be found here: <a href="https://github.com/zhaodemo/disqus-php-api/tree/master/api">https://github.com/zhaodemo/disqus-php-api/tree/master/api</a></p>
 <p>You need to specify  your Disqus account information in the config.php.</p>
 <pre tabindex="0"><code>define(&#39;PUBLIC_KEY&#39;, &#39;&#39;);
 define(&#39;SECRET_KEY&#39;, &#39;&#39;);
@@ -321,12 +321,8 @@ algolia_apiKey = {{ YOUR_SEARCH_ONLY_KEY }}
 <h2 id="thank">Thank</h2>
 <p>Thanks for the great jobs of <a href="https://github.com/Huxpro/huxpro.github.io">huxblog Jekyll Theme</a> and <a href="https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll">Clean Blog Jekyll Theme</a> which are the the two upstream projects CleanWhite Hugo theme is based on.</p>
 <h2 id="feedback">Feedback</h2>
-<p>If you find any problems, please feel free to <a href="https://github.com/zhaohuabing/hugo-theme-cleanwhite/issues/new">raise an issue</a> or create a pull request to fix it.</p>
+<p>If you find any problems, please feel free to <a href="https://github.com/zhaodemo/hugo-theme-cleanwhite/issues/new">raise an issue</a> or create a pull request to fix it.</p>
 <p>If it&rsquo;s helpful for you, I would appreciate it if you could star this repository, thanks!</p>
-
-
-                
-                
 
 
                 
@@ -405,7 +401,7 @@ algolia_apiKey = {{ YOUR_SEARCH_ONLY_KEY }}
                     <h5>FRIENDS</h5>
                     <ul class="list-inline">
                         
-                        <li><a target="_blank" href="https://zhaozhihan.com">Linda的博客</a></li>
+                        <li><a target="_blank" href="https://im.qq.com/index/">加我为好友：2138205929</a></li>
                         
                     </ul>
                 </section>
@@ -425,7 +421,7 @@ algolia_apiKey = {{ YOUR_SEARCH_ONLY_KEY }}
                 <ul class="list-inline text-center">                  
                     
                     <li>
-                        <a href="mailto:youremail@gmail.com">
+                        <a href="mailto:2138205929@qq.com">
                             <span class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
                                 <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
@@ -508,7 +504,7 @@ algolia_apiKey = {{ YOUR_SEARCH_ONLY_KEY }}
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                        src="https://ghbtns.com/github-btn.html?user=zhaodemo&repo=hugo-theme-cleanwhite&type=star&count=true" >
                     </iframe>
                     
                 </p>

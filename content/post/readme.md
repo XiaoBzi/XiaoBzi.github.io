@@ -4,7 +4,7 @@ title:      "Clean White Theme for Hugo"
 subtitle:   "How to set up this theme"
 date:       2019-01-09
 author:     "赵化冰"
-image:      "https://img.zhaohuabing.com/post-bg-2015.jpg"
+image:      "https://img.zhaodemo.com/post-bg-2015.jpg"
 ---
 
 # Clean White Theme for Hugo
@@ -40,14 +40,14 @@ Go to the directory where you have your Hugo site and run:
 ```
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+$ git clone https://github.com/zhaodemo/hugo-theme-cleanwhite.git
 ```
 
 If your site is already a git project, you may want to choose to add the cleanwhite theme as a submodule to avoid messing up your existing git repository.
 
 ```
 $ mkdir themes
-$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+$ git submodule add https://github.com/zhaodemo/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
 ```
 Run  Hugo Build-in Server Locally
 
@@ -56,12 +56,12 @@ $ hugo serve -t  hugo-theme-cleanwhite
 ```
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
-If you start from scratch, there is a working Hugo site configured with the CleanWhite theme in the [exampleSite](https://github.com/zhaohuabing/hugo-theme-cleanwhite/tree/master/exampleSite) directory.  You can use it as a starting point for your site.
+If you start from scratch, there is a working Hugo site configured with the CleanWhite theme in the [exampleSite](https://github.com/zhaodemo/hugo-theme-cleanwhite/tree/master/exampleSite) directory.  You can use it as a starting point for your site.
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo 
 
 ## Configuration
-First, let's take a look at the [config.toml](https://github.com/zhaohuabing/hugo-cleanwhite-theme/tree/master/exampleSite/config.toml). It will be useful to learn how to customize your site. Feel free to play around with the settings.
+First, let's take a look at the [config.toml](https://github.com/zhaodemo/hugo-cleanwhite-theme/tree/master/exampleSite/config.toml). It will be useful to learn how to customize your site. Feel free to play around with the settings.
 
 ### Comments
 The optional comments system is powered by [Disqus](https://disqus.com). If you want to enable comments, create an account in Disqus and write down your shortname.
@@ -72,11 +72,11 @@ disqusShortname = "your-disqus-short-name"
 You can disable the comments system by leaving the `disqusShortname` empty.
 
 ### Disqus in China
-Disqus is inaccessible in China. To get it to work, we can set up a proxy with [disqus-php-api](https://github.com/zhaohuabing/disqus-php-api) in a host which sets between the client browser and the Disqus server. The idea is that if Disqus can be reached in the guest network, the blog page will show the original Disqus comments UI, otherwise, it will downgrade and use the proxy to access the Disqus, the UI will be a little different, but the visitors can still write their comments on the page.
+Disqus is inaccessible in China. To get it to work, we can set up a proxy with [disqus-php-api](https://github.com/zhaodemo/disqus-php-api) in a host which sets between the client browser and the Disqus server. The idea is that if Disqus can be reached in the guest network, the blog page will show the original Disqus comments UI, otherwise, it will downgrade and use the proxy to access the Disqus, the UI will be a little different, but the visitors can still write their comments on the page.
 
 The client side java script has already been integrated to CleanWhite them, but you need to set up a proxy server yourself.
 
-The proxy is written in php, which can be found here: https://github.com/zhaohuabing/disqus-php-api/tree/master/api
+The proxy is written in php, which can be found here: https://github.com/zhaodemo/disqus-php-api/tree/master/api
 
 You need to specify  your Disqus account information in the config.php.
 ```
@@ -154,7 +154,7 @@ reward = true
 Thanks for the great jobs of [huxblog Jekyll Theme](https://github.com/Huxpro/huxpro.github.io) and [Clean Blog Jekyll Theme](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll) which are the the two upstream projects CleanWhite Hugo theme is based on.
 
 ## Feedback
-If you find any problems, please feel free to [raise an issue](https://github.com/zhaohuabing/hugo-theme-cleanwhite/issues/new) or create a pull request to fix it. 
+If you find any problems, please feel free to [raise an issue](https://github.com/zhaodemo/hugo-theme-cleanwhite/issues/new) or create a pull request to fix it. 
 
 If it's helpful for you, I would appreciate it if you could star this repository, thanks!
 

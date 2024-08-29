@@ -11,28 +11,28 @@ While I created this theme, I followed the Hugo theme best practice and tried to
 ## Screenshots
 
 **Home**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/screenshot.png)
 
 **Post**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/post.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/post.png)
 
 **Search**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/sitesearch.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/sitesearch.png)
 
 **Archive**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/archive.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/archive.png)
 
 **Disqus**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/disqus.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/disqus.png)
 
 **Wechat Pay & Alipay**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/rewards.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/rewards.png)
 
 **Mind Map**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/mindmap.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/mindmap.png)
 
 **Bilibili Video**
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/bilibili.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/bilibili.png)
 
 ## Quick Start
 
@@ -43,7 +43,7 @@ $ mkdir test
 $ cd test
 $ mkdir themes
 $ cd themes
-$ git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite.git
+$ git clone https://github.com/zhaodemo/hugo-theme-cleanwhite.git
 $ cp -r hugo-theme-cleanwhite/exampleSite/** ../
 $ cd ..
 $ hugo serve
@@ -53,7 +53,7 @@ If your site is already a git project, you may want to choose to add the cleanwh
 
 ```
 $ mkdir themes
-$ git submodule add https://github.com/zhaohuabing/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
+$ git submodule add https://github.com/zhaodemo/hugo-theme-cleanwhite.git themes/hugo-theme-cleanwhite
 ```
 Run  Hugo Build-in Server Locally
 
@@ -62,12 +62,12 @@ $ hugo serve -t  hugo-theme-cleanwhite
 ```
 Now enter [`localhost:1313`](http://localhost:1313) in the address bar of your browser.
 
-If you start from scratch, there is a working Hugo site configured with the CleanWhite theme in the [exampleSite](https://github.com/zhaohuabing/hugo-theme-cleanwhite/tree/master/exampleSite) directory.  You can use it as a starting point for your site.
+If you start from scratch, there is a working Hugo site configured with the CleanWhite theme in the [exampleSite](https://github.com/zhaodemo/hugo-theme-cleanwhite/tree/master/exampleSite) directory.  You can use it as a starting point for your site.
 
 For more information read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo
 
 ## Configuration
-First, let's take a look at the [config.toml](https://github.com/zhaohuabing/hugo-theme-cleanwhite/blob/master/exampleSite/config.toml). It will be useful to learn how to customize your site. Feel free to play around with the settings.
+First, let's take a look at the [config.toml](https://github.com/zhaodemo/hugo-theme-cleanwhite/blob/master/exampleSite/config.toml). It will be useful to learn how to customize your site. Feel free to play around with the settings.
 
 ### Comment Systems
 
@@ -100,11 +100,11 @@ disqusShortname = "your-disqus-short-name"
 ```
 
 #### Disqus behind a proxy
-If Disqus can't be directly accessed, we can set up a proxy with [disqus-php-api](https://github.com/zhaohuabing/disqus-php-api) in a host which sets between the client browser and the Disqus server. The idea is that if Disqus can be reached in the guest network, the blog page will show the original Disqus comments UI, otherwise, it will downgrade and use the proxy to access the Disqus, the UI will be a little different, but the visitors can still write their comments on the page.
+If Disqus can't be directly accessed, we can set up a proxy with [disqus-php-api](https://github.com/zhaodemo/disqus-php-api) in a host which sets between the client browser and the Disqus server. The idea is that if Disqus can be reached in the guest network, the blog page will show the original Disqus comments UI, otherwise, it will downgrade and use the proxy to access the Disqus, the UI will be a little different, but the visitors can still write their comments on the page.
 
 The client side java script has already been integrated to CleanWhite them, but you need to set up a proxy server yourself.
 
-The proxy is written in php, which can be found here: https://github.com/zhaohuabing/disqus-php-api/tree/master/api
+The proxy is written in php, which can be found here: https://github.com/zhaodemo/disqus-php-api/tree/master/api
 
 You need to specify  your Disqus account information in the config.php.
 ```
@@ -267,16 +267,16 @@ Alice <-- Bob: Another authentication Response
 ```
 </pre>
 
-![screenshot](https://raw.githubusercontent.com/zhaohuabing/hugo-theme-cleanwhite/master/images/plantuml.png)
+![screenshot](https://raw.githubusercontent.com/zhaodemo/hugo-theme-cleanwhite/master/images/plantuml.png)
 
 
 ## Thanks
 Thanks for the great jobs of [huxblog Jekyll Theme](https://github.com/Huxpro/huxpro.github.io) and [Clean Blog Jekyll Theme](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll) which are the the two upstream projects CleanWhite Hugo theme is based on.
 
 ## Feedback
-If you find any problems, please feel free to [raise an issue](https://github.com/zhaohuabing/hugo-theme-cleanwhite/issues/new) or create a pull request to fix it.
+If you find any problems, please feel free to [raise an issue](https://github.com/zhaodemo/hugo-theme-cleanwhite/issues/new) or create a pull request to fix it.
 
 If it's helpful for you, I would appreciate it if you could star this repository, thanks!
 
 ## Who is using cleanwhite？(谁在使用 cleanwhite？) 
-Sincerely thank everyone who constantly keeps on using and supporting cleanwhite. Feel free to leave a comment on [this issue](https://github.com/zhaohuabing/hugo-theme-cleanwhite/issues/115) to include information about your blog.
+Sincerely thank everyone who constantly keeps on using and supporting cleanwhite. Feel free to leave a comment on [this issue](https://github.com/zhaodemo/hugo-theme-cleanwhite/issues/115) to include information about your blog.

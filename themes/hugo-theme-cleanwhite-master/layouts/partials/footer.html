@@ -55,7 +55,7 @@
                     </li>
 		           {{ end }}
 
-		            <!-- Huabing: add wechat QR code link -->
+		            <!-- demo: add wechat QR code link -->
                     {{ with .Site.Params.social.wechat }}
                     <li>
                         <a target="_blank" href="{{ . | relURL }}">
@@ -211,11 +211,11 @@
                     Copyright &copy; {{ .Site.Title }} {{ now.Year }} {{- if .Site.Params.icp }} | {{ with .Site.Params.icp }}{{ . | markdownify }}{{ end }}{{- end}}
                     {{ if .Site.Params.upstreamAttribution }}
                     <br>
-                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <a href="https://xiaobzi.github.io/">demo</a> |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                        src="https://ghbtns.com/github-btn.html?user=zhaodemo&repo=hugo-theme-cleanwhite&type=star&count=true" >
                     </iframe>
                     {{ end }}
                 </p>
