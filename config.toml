@@ -13,7 +13,7 @@ hasCJKLanguage = true
 home = ["HTML", "RSS", "Algolia"]
 
 [params]
-  header_image = "img/home-bg-jeep.jpg"
+  header_image = "img/beijing.jpg"
   SEOTitle = "人生初体验 "
   description = "我，无业游民, 安静内向，追求偏爱 | 这里是 Gray 的博客，与你一起探索虚拟世界。"
   keyword = "Gray,网络日志, 博客, Blog,个人网站,AI, comfyui初体验, 生活, 学习, 美食, 日常"
@@ -39,6 +39,9 @@ home = ["HTML", "RSS", "Algolia"]
   sidebar_about_description = "我的自画像虚拟版"
   #sidebar_avatar = "img/avatar-zhaodemo.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
   sidebar_avatar = "img/me.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+  sidebar_about_description1 = "微信扫码，无论多少，您的小小心意，都是网站经营下去的动力"
+  sidebar_avatar1 = "reward/weichat.png"     
 
   featured_tags = true 
   featured_condition_size = 1 

@@ -20,6 +20,14 @@
             {{ with .Site.Params.sidebar_about_description }}
                 <p>{{ . }}</p>
             {{ end }}
+            {{ with .Site.Params.sidebar_avatar1 }}
+            <a href="{{ "/about" | relLangURL }}">
+               <img src="{{ . | relURL }}" alt="avatar" style="cursor: pointer" />
+            </a>
+            {{ end }}
+            {{ with .Site.Params.sidebar_about_description1 }}
+                <p>{{ . }}</p>
+            {{ end }}
            <!-- SNS Link -->
            <ul class="list-inline">
                {{ if .Site.Params.social.email }}
