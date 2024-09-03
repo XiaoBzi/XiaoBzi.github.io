@@ -9,7 +9,7 @@ image: "img/fj1.jpg"
 published: true 
 tags:
     - ubuntu 
-URL: "/workCQ/"
+URL: "/workdancer/"
 categories: [ "我的工作" ]    
 ---
 ## 求学之路————背影 抖音同步

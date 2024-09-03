@@ -6,13 +6,27 @@
     <description>Recent content on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Aug 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>工作经验的小小总结，持续工作，持续更新……</title>
+      <link>http://localhost:1313/worktips/</link>
+      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/worktips/</guid>
+      <description>命令 1. 清华源镜像 pip install XXXX -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple 2. github镜像源 https://kkgithub.com/ 3. comfyui的node装不起 （界面爆红） 点击名字超链接，进入GitHub下载zip,然后</description>
+    </item>
+    <item>
+      <title>寻找最美动漫人物</title>
+      <link>http://localhost:1313/worknews/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/worknews/</guid>
+      <description>你的动漫idol为你播报新闻 一位来自岳芊妹妹的推荐FLL，一位来自我追完动漫仍在持续追更漫画的白发少年WTW，友友们喜欢的动漫人物可以电脑端</description>
+    </item>
+    <item>
       <title>不同风格数字人手势舞</title>
-      <link>http://localhost:1313/workCQ/</link>
+      <link>http://localhost:1313/workdancer/</link>
       <pubDate>Tue, 27 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/workCQ/</guid>
+      <guid>http://localhost:1313/workdancer/</guid>
       <description>求学之路————背影 抖音同步 在成长的道路上，小小的她从幼儿园的天真烂漫，到学前班的好奇探索，再到小学的认真学习，初中的青春挑战，高中的自我发</description>
     </item>
     <item>
@@ -37,6 +51,13 @@
       <description>2023年 秋 我 来到 重庆 使用AIGC 打造赛国朋克式重庆 重庆是中国中西部唯一的直辖市，位于长江和嘉陵江的交汇处，以山城、雾都、桥都著称。这座城市</description>
     </item>
     <item>
+      <title>重庆铜锣山矿山公园</title>
+      <link>http://localhost:1313/recommendplace1/</link>
+      <pubDate>Fri, 10 May 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/recommendplace1/</guid>
+      <description>简介 重庆铜锣山矿山公园位于重庆市渝北区石船镇，这里曾是渝北最大的石灰岩矿区，经过生态修复和改造，成为了一个美丽的公园。公园以其独特的矿坑奇景</description>
+    </item>
+    <item>
       <title>努力制作更新中敬请期待……</title>
       <link>http://localhost:1313/recommendplace/</link>
       <pubDate>Fri, 21 Aug 2020 00:00:00 +0000</pubDate>
@@ -49,13 +70,6 @@
       <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/recommendfood/</guid>
       <description>敬请期待</description>
-    </item>
-    <item>
-      <title>Clean White Theme for Hugo</title>
-      <link>http://localhost:1313/post/readme/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/readme/</guid>
-      <description>Clean White Theme for Hugo CleanWhite is a clean, elegant, but fully functional blog theme for Hugo. Here is a live demo site using this theme. It is based on huxblog Jekyll Theme and Clean Blog Jekyll Theme. These two upstream projects have done awesome jobs to create a blog theme, what I&amp;rsquo;m doing here is porting it to Hugo, of which I like the simplicity and the much faster</description>
     </item>
     <item>
       <title></title>
