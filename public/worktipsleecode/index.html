@@ -10,20 +10,20 @@
     <meta property="og:type" content="article">
 
     
-    <meta property="og:image" content="img/fj2.jpg">
-    <meta property="twitter:image" content="img/fj2.jpg" />
+    <meta property="og:image" content="img/fj1.jpg">
+    <meta property="twitter:image" content="img/fj1.jpg" />
     
 
     
-    <meta name="title" content="努力制作更新中敬请期待……" />
-    <meta property="og:title" content="努力制作更新中敬请期待……" />
-    <meta property="twitter:title" content="努力制作更新中敬请期待……" />
+    <meta name="title" content="py小白工作总结，持续更新……" />
+    <meta property="og:title" content="py小白工作总结，持续更新……" />
+    <meta property="twitter:title" content="py小白工作总结，持续更新……" />
     
 
     
-    <meta name="description" content="敬请期待">
-    <meta property="og:description" content="敬请期待" />
-    <meta property="twitter:description" content="敬请期待" />
+    <meta name="description" content="常用命令总结&#43;可行解决方法">
+    <meta property="og:description" content="常用命令总结&#43;可行解决方法" />
+    <meta property="twitter:description" content="常用命令总结&#43;可行解决方法" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Gray,网络日志, 博客, Blog,个人网站,AI, comfyui初体验, 生活, 学习, 美食, 日常">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>努力制作更新中敬请期待…… | 人生初体验 </title>
+    <title>py小白工作总结，持续更新…… | 人生初体验 </title>
 
-    <link rel="canonical" href="/recommendplace/">
+    <link rel="canonical" href="/worktipsleecode/">
 
     
     
@@ -168,7 +168,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/fj2.jpg')
+        background-image: url('/img/fj1.jpg')
     }
 </style>
 
@@ -180,24 +180,12 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/%E6%88%90%E9%83%BD" title="成都">
-                            成都
-                        </a>
-                        
-                        <a class="tag" href="/tags/%E9%9B%85%E5%AE%89" title="雅安">
-                            雅安
-                        </a>
-                        
-                        <a class="tag" href="/tags/%E9%87%8D%E5%BA%86" title="重庆">
-                            重庆
-                        </a>
-                        
-                        <a class="tag" href="/tags/others" title="Others">
-                            Others
+                        <a class="tag" href="/tags/ubuntu" title="ubuntu">
+                            ubuntu
                         </a>
                         
                     </div>
-                    <h1>努力制作更新中敬请期待……</h1>
+                    <h1>py小白工作总结，持续更新……</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -206,7 +194,7 @@
                                     &#34;甜甜圈&#34;
                              
                             on 
-                            Friday, August 21, 2020
+                            Thursday, January 4, 2024
                             
                             
                             
@@ -232,8 +220,67 @@
                 post-container">
 
                 
-                <h1 id="敬请期待">敬请期待</h1>
+                <h2 id="命令">命令</h2>
+<h4 id="1-数组常用命令">1. 数组(常用命令)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>nums=[1,1,2,3]
+</span></span><span style="display:flex;"><span>del nums[i]
+</span></span><span style="display:flex;"><span>nums.count(1)
+</span></span></code></pre></div><h4 id="2轮转数组">2.轮转数组</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>nums[:]=nums[-k:] + nums[:-k]
+</span></span></code></pre></div><h4 id="3-摩尔投票同归于尽找比一半人数还要多的票">3. 摩尔投票，同归于尽，找比一半人数还要多的票</h4>
+<p>摩尔pk投票算法(同归于尽算法)是一种用于找出数组中出现次数最多的元素的线性时间算法。它的基本思想是通过不断消除不同的元素对来找出最终的候选元素。
+算法步骤如下：初始化候选元素(candidate)和计数器(count)：首先将候选元素设为数组的第一个元素，计数器设为1。
+遍历数组：从第二个元素开始遍历数组。
+更新候选元素和计数器：对于每个遍历到的元素，如果计数器为0，则将候选元素更新为当前元素，计数器设为1。如果当前元素与候选元素相同，则计数器加1；如果不同，则计数器减1。
+返回候选元素：遍历完成后，候选元素即为出现次数最多的元素。</p>
+<p>Boyer-Moore投票算法的核心在于，对于任意一对不同的元素，如果它们两两消除，最终剩下的元素仍然是出现次数最多的元素。因此，通过遍历数组，将不同的元素两两消除，最终剩下的就是出现次数最多的元素。</p>
+<p>形象化描述：“同归于尽消杀法” ：由于多数超过50%, 比如100个数，那么多数至少51个，剩下少数是49个。</p>
+<p>第一个到来的士兵，直接插上自己阵营的旗帜占领这块高地，此时领主 winner 就是这个阵营的人，现存兵力 count = 1。</p>
+<p>如果新来的士兵和前一个士兵是同一阵营，则集合起来占领高地，领主不变，winner 依然是当前这个士兵所属阵营，现存兵力 count++；</p>
+<p>如果新来到的士兵不是同一阵营，则前方阵营派一个士兵和领主阵营的一个士兵同归于尽。 此时前方阵营兵力count &ndash;。（即使双方都死光，这块高地的旗帜 winner 依然不变，因为已经没有活着的士兵可以去换上自己的新旗帜，但是不用考虑这种情况，因为双方死光，下一个占领的直接就是winner，就是第一种情况。）</p>
+<p>当下一个士兵到来，发现前方阵营已经没有兵力，新士兵就成了领主，winner 变成这个士兵所属阵营的旗帜，现存兵力 count ++。</p>
+<p>就这样各路军阀一直以这种以一敌一同归于尽的方式厮杀下去，直到少数阵营都死光，那么最后剩下的几个必然属于多数阵营，winner 就是多数阵营。（多数阵营 51个，少数阵营只有49个，剩下的2个就是多数阵营的人）</p>
+<h4 id="4-股票随时可买可退是贪心算法">4. 股票随时可买可退是贪心算法</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    def maxProfit(prices):
+</span></span><span style="display:flex;"><span>    total_profit = 0
+</span></span><span style="display:flex;"><span>    for i in range(1, len(prices)):
+</span></span><span style="display:flex;"><span>        if prices[i] &gt; prices[i - 1]:
+</span></span><span style="display:flex;"><span>            total_profit += prices[i] - prices[i - 1]
+</span></span><span style="display:flex;"><span>    return total_profit
+</span></span></code></pre></div><h4 id="5-股票只能买一次是最大减最小">5. 股票只能买一次，是最大减最小</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>def maxProfit(prices):
+</span></span><span style="display:flex;"><span>    if not prices:
+</span></span><span style="display:flex;"><span>        return 0
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    min_price = float(&#39;inf&#39;)  # 初始化为正无穷大
+</span></span><span style="display:flex;"><span>    max_profit = 0  # 初始化最大利润为0
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    for price in prices:
+</span></span><span style="display:flex;"><span>        if price &lt; <span style="color:#ff79c6">min_price:</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#50fa7b">min_price </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">price</span>  # <span style="color:#50fa7b">更新最低价格</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#50fa7b">elif</span> <span style="color:#50fa7b">price</span> <span style="color:#50fa7b">-</span> <span style="color:#50fa7b">min_price</span> &gt; max_profit:
+</span></span><span style="display:flex;"><span>            max_profit = price - min_price  # 更新最大利润
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    return max_profit
+</span></span></code></pre></div><h4 id="6-animatediff-有两个版本">6. AnimateDiff 有两个版本！</h4>
+<p>2个版本的animatediff模块对比
 
+  <img src="/img/tipcomfy/gen.png" alt="加载中……">
+
+
+gen2节点寻找方法
+
+  <img src="/img/tipcomfy/gen2.png" alt="加载中……">
+
+
+gen2,流行工作流常用，连接如下：
+
+  <img src="/img/tipcomfy/gennew.png" alt="加载中……">
+
+</p>
+<h4 id="7-ipaadapter-里面如果clip-vision-老是报模型和权重文件结构不符要重新下载下面的clip-vision">7. IPAadapter 里面,如果clip vision 老是报模型和权重文件结构不符，要重新下载下面的clip vision</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
+</span></span></code></pre></div>
 
                 
 
@@ -242,13 +289,13 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/recommendfood/" data-toggle="tooltip" data-placement="top" title="努力制作更新中敬请期待……">&larr;
+                        <a href="/recommendplace/" data-toggle="tooltip" data-placement="top" title="努力制作更新中敬请期待……">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/worktipsleecode/" data-toggle="tooltip" data-placement="top" title="py小白工作总结，持续更新……">Next
+                        <a href="/recommendplace1/" data-toggle="tooltip" data-placement="top" title="重庆铜锣山矿山公园">Next
                             Post &rarr;</a>
                     </li>
                     

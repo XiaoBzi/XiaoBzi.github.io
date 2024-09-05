@@ -18,6 +18,9 @@ categories: [ "我的工作" ]
 ## 你的动漫idol为你唱歌
 {{<bilibili src="//player.bilibili.com/player.html?isOutside=true&aid=113072194784515&bvid=BV1L8HpeMEpS&cid=25716983637&p=1">}}
 猜猜他是谁吧，友友们喜欢的动漫人物可以电脑端扫码备注随意打赏，我们将有机会为你定制视频并发布哟！
+## 女神唱歌合集，猜猜她们都是谁，which one is the best?
+{{<bilibili src="//player.bilibili.com/player.html?isOutside=true&aid=113085247524331&bvid=BV16ypue5EqG&cid=25752374269&p=1">}}
+猜猜他是谁吧，友友们喜欢的动漫人物可以电脑端扫码备注随意打赏，我们将有机会为你定制视频并发布哟！
 ## 我们是依靠大模型制作，几十就能秒出片，对电脑配置无要求
 ### 使用的工作流如下：
 #### 1. 图与视频联动工作流  

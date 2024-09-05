@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      "工作经验的小小总结，持续工作，持续更新……"
+title:      "AIGC工作总结，持续更新……"
 description: "常用命令总结+可行解决方法"
 excerpt: "航拍+8D重庆+赛国朋克"
-date:    2024-09-02
+date:    2024-09-05
 author:     "甜甜圈"
 image: "img/fj1.jpg"
 published: true 
@@ -47,4 +47,15 @@ first
  git add .(本地)
  git commit -m "每次不同英文"
  git push --set-upstream origin master
+```
+#### 6. AnimateDiff 有两个版本！
+2个版本的animatediff模块对比
+![加载中……](/img/tipcomfy/gen.png)
+gen2节点寻找方法
+![加载中……](/img/tipcomfy/gen2.png)
+gen2,流行工作流常用，连接如下：
+![加载中……](/img/tipcomfy/gennew.png)
+#### 7. IPAadapter 里面,如果clip vision 老是报模型和权重文件结构不符，要重新下载下面的clip vision
+```html
+https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
 ```

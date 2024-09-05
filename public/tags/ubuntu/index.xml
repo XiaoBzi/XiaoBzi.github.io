@@ -6,12 +6,12 @@
     <description>Recent content in Ubuntu on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Sep 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>工作经验的小小总结，持续工作，持续更新……</title>
+      <title>AIGC工作总结，持续更新……</title>
       <link>http://localhost:1313/worktips/</link>
-      <pubDate>Mon, 02 Sep 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/worktips/</guid>
       <description>命令 1. 清华源镜像 pip install XXXX -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple 2. github镜像源 https://kkgithub.com/ 3. comfyui的node装不起 （界面爆红） 点击名字超链接，进入GitHub下载zip,然后</description>
     </item>
@@ -49,6 +49,13 @@
       <pubDate>Tue, 20 Aug 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/workCQ/</guid>
       <description>2023年 秋 我 来到 重庆 使用AIGC 打造赛国朋克式重庆 重庆是中国中西部唯一的直辖市，位于长江和嘉陵江的交汇处，以山城、雾都、桥都著称。这座城市</description>
+    </item>
+    <item>
+      <title>py小白工作总结，持续更新……</title>
+      <link>http://localhost:1313/worktipsleecode/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/worktipsleecode/</guid>
+      <description>命令 1. 数组(常用命令) nums=[1,1,2,3] del nums[i] nums.count(1) 2.轮转数组 nums[:]=nums[-k:] + nums[:-k] 3. 摩尔投票，同归于尽，找比一半人数还要多的票 摩尔pk投票算法(同归于尽算法)是一种用于找出数</description>
     </item>
   </channel>
 </rss>
