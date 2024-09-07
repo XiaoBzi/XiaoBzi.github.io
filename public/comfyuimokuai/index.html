@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="AIGC工作总结，持续更新……" />
-    <meta property="og:title" content="AIGC工作总结，持续更新……" />
-    <meta property="twitter:title" content="AIGC工作总结，持续更新……" />
+    <meta name="title" content="AIGC帖子总结模块功能篇" />
+    <meta property="og:title" content="AIGC帖子总结模块功能篇" />
+    <meta property="twitter:title" content="AIGC帖子总结模块功能篇" />
     
 
     
-    <meta name="description" content="常用命令总结&#43;可行解决方法">
-    <meta property="og:description" content="常用命令总结&#43;可行解决方法" />
-    <meta property="twitter:description" content="常用命令总结&#43;可行解决方法" />
+    <meta name="description" content="实用模块功能&#43;使用方法">
+    <meta property="og:description" content="实用模块功能&#43;使用方法" />
+    <meta property="twitter:description" content="实用模块功能&#43;使用方法" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Gray,网络日志, 博客, Blog,个人网站,AI, comfyui初体验, 生活, 学习, 美食, 日常">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>AIGC工作总结，持续更新…… | 人生初体验 </title>
+    <title>AIGC帖子总结模块功能篇 | 人生初体验 </title>
 
-    <link rel="canonical" href="/worktips/">
+    <link rel="canonical" href="/comfyuimokuai/">
 
     
     
@@ -185,7 +185,7 @@
                         </a>
                         
                     </div>
-                    <h1>AIGC工作总结，持续更新……</h1>
+                    <h1>AIGC帖子总结模块功能篇</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -194,7 +194,7 @@
                                     &#34;甜甜圈&#34;
                              
                             on 
-                            Thursday, September 5, 2024
+                            Friday, September 6, 2024
                             
                             
                             
@@ -220,50 +220,172 @@
                 post-container">
 
                 
-                <h2 id="命令">命令</h2>
-<h4 id="1-清华源镜像">1. 清华源镜像</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>pip install XXXX -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-</span></span></code></pre></div><h4 id="2-github镜像源">2. github镜像源</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://kkgithub.com/
-</span></span></code></pre></div><h4 id="3-comfyui的node装不起--界面爆红">3. comfyui的node装不起  （界面爆红）</h4>
-<p>点击名字超链接，进入GitHub下载zip,然后解压到XXXX-node里面，如果还是不行，要进入下好的文件夹</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>删除一切版本号，删除torch那三个，numpy,opencv
-</span></span><span style="display:flex;"><span>pip install -r requirements.txt -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
-</span></span><span style="display:flex;"><span>python COMFUI/main.py
-</span></span></code></pre></div><h4 id="4-找资源对于不能翻墙的我">4. 找资源（对于不能翻墙的我）</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://hf-mirror.com/
-</span></span></code></pre></div><h4 id="5-git上传">5. git上传</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>cd 项目
-</span></span><span style="display:flex;"><span>hugo
-</span></span><span style="display:flex;"><span>hugo serve
-</span></span><span style="display:flex;"><span>first
-</span></span><span style="display:flex;"><span> git init
-</span></span><span style="display:flex;"><span> git remote remove origin
-</span></span><span style="display:flex;"><span> git remote add origin https://github.com/XXX项目地址
-</span></span><span style="display:flex;"><span> git pull （抓取）
-</span></span><span style="display:flex;"><span> then
-</span></span><span style="display:flex;"><span> git add .(本地)
-</span></span><span style="display:flex;"><span> git commit -m &#34;每次不同英文&#34;
-</span></span><span style="display:flex;"><span> git push --set-upstream origin master
-</span></span></code></pre></div><h4 id="6-animatediff-有两个版本">6. AnimateDiff 有两个版本！</h4>
-<p>2个版本的animatediff模块对比
-
-  <img src="/img/tipcomfy/gen.png" alt="加载中……">
-
-
-gen2节点寻找方法
-
-  <img src="/img/tipcomfy/gen2.png" alt="加载中……">
-
-
-gen2,流行工作流常用，连接如下：
-
-  <img src="/img/tipcomfy/gennew.png" alt="加载中……">
+                <h2 id="comfyui手册">Comfyui手册</h2>
+<h4 id="1-组节点的启用高亮和停用">1. 组节点的启用（高亮）和停用</h4>
+<p>
+  <img src="/img/tipcomfy/%e5%90%af%e7%94%a8%e8%8a%82%e7%82%b9.png" alt="加载中……">
 
 </p>
-<h4 id="7-ipaadapter-里面如果clip-vision-老是报模型和权重文件结构不符要重新下载下面的clip-vision">7. IPAadapter 里面,如果clip vision 老是报模型和权重文件结构不符，要重新下载下面的clip vision</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
-</span></span></code></pre></div>
+<h4 id="2-controlnet-连接位置">2. ControlNet 连接位置</h4>
+<p>连在在clip text 后面，后面退出到ksample采样器正负提示词。
+controlnet的预处理器通过图片蓝线传controlnet，例如姿态识别
+
+  <img src="/img/tipcomfy/controlnet.png" alt="加载中……">
+
+</p>
+<h4 id="3-controlnet-预处理器-简介">3. ControlNet 预处理器 简介</h4>
+<p>ControlNet 是一个很强的插件，提供了很多种图片的控制方式，有的可以控制画面的结构，有的可以控制人物的姿势，还有的可以控制图片的画风，这对于提高AI绘画的质量特别有用。接下来就演示几种热门常用的控制方式</p>
+<h4 id="-1openpose姿态控制预处理器">* 1.OpenPose（姿态控制预处理器）</h4>
+<p>姿态控制预处理器可以根据提供的图像将人物的骨骼脸部手部的姿态展示处理，通过这个预处理器可以很好的控制出图人物的姿态</p>
+<h4 id="-2depth深度预处理器">* 2.Depth（深度预处理器）</h4>
+<p>深度预处理器可以将图片的空间的远近以黑白的形式展示出来，白近黑远，当我们上传一张图片通过OpenPose识别到手的位置，但骨骼图并不能描述手在身前还是身后的时候，那个深度预处理器就可以提现出作用了，当然还可以运用在一些建筑、室内等情况</p>
+<h4 id="-3lineart线条预处理器">* 3.LineArt（线条预处理器）</h4>
+<p>线条预处理器可以将图片用线条的形式描绘出来，可以很好的控制图片的细节</p>
+<h4 id="-4hed-soft-edge模糊线条预处理器">* 4.HED Soft-Edge（模糊线条预处理器）</h4>
+<p>模糊线条预处理器与线条预处理器类型也是用线条描绘图片，但仅大概描绘轮廓，更利于出图的随机性。
+
+  <img src="/img/tipcomfy/controlnet%e9%a2%84%e5%a4%84%e7%90%86%e5%99%a8.jpg" alt="加载中……">
+
+</p>
+<h4 id="4-找资源对于不能翻墙的我">4. 找资源（对于不能翻墙的我）</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://hf-mirror.com/
+</span></span></code></pre></div><h4 id="5-comfyui加噪声案例在github-readme">5. Comfyui加噪声，案例在github readme</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://github.com/BlenderNeko/ComfyUI_Noise.git
+</span></span></code></pre></div><p>
+  <img src="/img/tipcomfy/%e5%8a%a0%e5%99%aa.png" alt="加载中……">
+
+
+加噪都作用：
+模型鲁棒性测试：在测试生成模型时，通过添加噪声来评估模型的鲁棒性和稳定性。
+数据增强：在潜空间中生成多样化的训练数据，增强模型的泛化能力。</p>
+<h4 id="6-comfyui抠图模块-更好的遮罩-layermask">6. comfyui抠图模块 更好的遮罩 LayerMask</h4>
+<p>
+  <img src="/img/tipcomfy/%e6%8a%a0%e5%9b%be.png" alt="加载中……">
+
+</p>
+<h4 id="7-comfyui滤镜模块-cube-滤镜文件">7. comfyui滤镜模块 Cube 滤镜文件</h4>
+<p>
+  <img src="/img/tipcomfy/%e6%bb%a4%e9%95%9c.png" alt="加载中……">
+
+</p>
+<h4 id="8comfyui亮度调节模块-自动调光">8.comfyui亮度调节模块 自动调光</h4>
+<p>
+  <img src="/img/tipcomfy/%e8%b0%83%e5%85%89.png" alt="加载中……">
+
+
+使用方法：
+
+  <img src="/img/tipcomfy/%e8%b0%83%e5%85%89%e5%b7%a5%e4%bd%9c%e6%b5%81.png" alt="加载中……">
+
+</p>
+<h4 id="9-comfyui图片上色模块">9. comfyui图片上色模块</h4>
+<p>
+  <img src="/img/tipcomfy/%e4%b8%8a%e8%89%b2.png" alt="加载中……">
+
+
+使用方法：
+
+  <img src="/img/tipcomfy/%e4%b8%8a%e8%89%b2%e5%b7%a5%e4%bd%9c%e6%b5%81.jpg" alt="加载中……">
+
+</p>
+<h4 id="10-image-blur-节点-羽化-模糊">10. Image Blur 节点 羽化 模糊</h4>
+<p>该节点用于对输入的图像进行模糊处理，以改变图像的视觉效果或者减少图像中的细节，通常用于创建柔和或者抽象化的视觉效果。
+blur_radius → 输入模糊的高斯半径
+sigma → 该值越小，模糊的像素越接近中心
+
+  <img src="/img/tipcomfy/%e7%be%bd%e5%8c%96.png" alt="加载中……">
+
+
+使用方法：
+
+  <img src="/img/tipcomfy/%e7%be%bd%e5%8c%96%e5%b7%a5%e4%bd%9c%e6%b5%81.jpg" alt="加载中……">
+
+</p>
+<h4 id="11-image-sharpen-节点-锐化-清晰">11. Image Sharpen 节点 锐化 清晰</h4>
+<p>该节点用于增强图像的清晰度和细节，通常用于提升图像的视觉效果和边缘锐化。
+sharpen_radius → 表示锐化的半径
+sigma → 该值越小，锐化的像素越接近中心像素
+alpha → 锐化的强度
+使用方法：
+
+  <img src="/img/tipcomfy/%e9%94%90%e5%8c%96%e5%b7%a5%e4%bd%9c%e6%b5%81.jpg" alt="加载中……">
+
+</p>
+<h4 id="12-image-quantize-节点-灰度图-简单色彩">12. Image Quantize 节点 灰度图 简单色彩</h4>
+<p>该节点用于将输入的图像进行量化处理，即将图像中的颜色数目减少到较少的色彩级别。
+colors → 表示量化后图像包含的颜色数量（颜色数量最小为1，最大位256）
+dither → 添加抖动效果，使图像在量化后更加平滑，会更好
+使用方法：
+
+  <img src="/img/tipcomfy/%e5%87%8f%e8%89%b2%e5%b7%a5%e4%bd%9c%e6%b5%81.png" alt="加载中……">
+
+</p>
+<h4 id="13-image-blend-节点-花了">13. Image Blend 节点 花了</h4>
+<p>该节点用于将两幅图像混合在一起，生成一个结合了两幅图像特征的图像。
+
+  <img src="/img/tipcomfy/%e6%b7%b7%e5%9b%be.png" alt="加载中……">
+
+</p>
+<h4 id="14-文本生成图像不需要向潜在空间输入任何东西使用空latent">14. 文本生成图像不需要向潜在空间输入任何东西，使用空latent</h4>
+<p>
+  <img src="/img/tipcomfy/%e7%a9%balatent.png" alt="加载中……">
+
+</p>
+<h4 id="15-输入参考图的要使用vae编码latent缩放大小再输入ksample">15. 输入参考图的要使用vae编码，latent缩放大小再输入ksample</h4>
+<p>
+  <img src="/img/tipcomfy/vaeencoder.png" alt="加载中……">
+
+</p>
+<h4 id="16-latent加vae进行局部重绘">16. Latent加vae进行局部重绘。</h4>
+<p>
+  <img src="/img/tipcomfy/%e5%b1%80%e9%83%a8%e9%87%8d%e7%bb%98.jpg" alt="加载中……">
+
+</p>
+<h4 id="17-批量生成图片latent复制批次次数次">17. 批量生成图片，latent复制批次，次数次</h4>
+<p>
+  <img src="/img/tipcomfy/%e6%89%b9%e6%ac%a1%e8%be%93%e5%87%ba.jpg" alt="加载中……">
+
+</p>
+<h4 id="18-串联重设latent批次省内存">18. 串联重设latent批次省内存</h4>
+<p>
+  <img src="/img/tipcomfy/%e8%8a%82%e7%9c%81%e5%86%85%e5%ad%98%e6%89%b9%e6%ac%a1.png" alt="加载中……">
+
+</p>
+<h4 id="19获取某批次中的某一张图片如此标号从批次获取latent">19.获取某批次中的某一张图片，如此标号，从批次获取latent</h4>
+<p>
+  <img src="/img/tipcomfy/%e9%80%89%e6%8b%a9%e6%80%a7%e8%be%93%e5%87%ba.jpg" alt="加载中……">
+
+</p>
+<h4 id="20comfyui脸部修复-这个约等于ksample-直接用">20.Comfyui脸部修复 这个约等于ksample 直接用</h4>
+<p>
+  <img src="/img/tipcomfy/%e8%84%b8%e9%83%a8%e4%bf%ae%e5%a4%8d%e5%b7%a5%e4%bd%9c%e6%b5%81.png" alt="加载中……">
+
+
+寻找该节点方法：
+
+  <img src="/img/tipcomfy/%e6%89%be%e8%84%b8%e9%83%a8%e4%bf%ae%e5%a4%8d.png" alt="加载中……">
+
+
+找其他组件：
+
+  <img src="/img/tipcomfy/%e6%89%be%e5%85%b6%e4%bb%96%e4%bf%ae%e5%a4%8d.png" alt="加载中……">
+
+</p>
+<h4 id="21vae-decode-在ksample后面解析为图片tile-是省内存版">21.VAE Decode 在ksample后面解析为图片。tile 是省内存版</h4>
+<p>tile_size -&gt; 用来设定&quot;块&quot;的大小，进行多块处理
+Tips：这个节点特别适合处理高分辨率图像，因为将图像分成小块进行处理，然后在处理完所有块后将它们组合成完整图像，可以避免内存溢出，并且提高处理效率。
+例如，1024*1024的图像可以通过设置1024，来分成2块进行解码，也可以设置成512，分成4块进行解码。
+
+  <img src="/img/tipcomfy/vaetile.png" alt="加载中……">
+
+</p>
+<h4 id="22图生图工作流">22.图生图工作流</h4>
+<p>
+  <img src="/img/tipcomfy/%e5%9b%be%e7%94%9f%e5%9b%be%e5%b7%a5%e4%bd%9c%e6%b5%81.jpg" alt="加载中……">
+
+</p>
+<h4 id="23获">23.获</h4>
+
 
                 
 
@@ -272,13 +394,13 @@ gen2,流行工作流常用，连接如下：
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/worknews/" data-toggle="tooltip" data-placement="top" title="寻找最美动漫人物">&larr;
+                        <a href="/worktips/" data-toggle="tooltip" data-placement="top" title="AIGC工作总结，持续更新……">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/comfyuimokuai/" data-toggle="tooltip" data-placement="top" title="AIGC工作总结，持续更新……">Next
+                        <a href="/workboysinger/" data-toggle="tooltip" data-placement="top" title="寻找最美歌手（imgtovid 大模型制作）">Next
                             Post &rarr;</a>
                     </li>
                     
