@@ -16,11 +16,11 @@
       <description>第一组：最美白发少年 可以猜出他们扮演的角色的名字吗？（imgtovid 大模型制作） 第二组：最美黑发少年 可以猜出他们扮演的角色的名字吗？（im</description>
     </item>
     <item>
-      <title>AIGC工作总结，持续更新……</title>
+      <title>AIGC帖子总结模块功能篇</title>
       <link>http://localhost:1313/comfyuimokuai/</link>
       <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/comfyuimokuai/</guid>
-      <description>命令 1. 清华源镜像 pip install XXXX -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple 2. github镜像源 https://kkgithub.com/ 3. comfyui的node装不起 （界面爆红） 点击名字超链接，进入GitHub下载zip,然后</description>
+      <description>Comfyui手册 1. 组节点的启用（高亮）和停用 2. ControlNet 连接位置 连在在clip text 后面，后面退出到ksample采样器正负提示词。 controlne</description>
     </item>
     <item>
       <title>AIGC工作总结，持续更新……</title>
