@@ -3,24 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ubuntu/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/workboysinger/</loc>
-    <lastmod>2024-09-07T00:00:00+00:00</lastmod>
+    <loc>http://localhost:1313/changeclothesboy/</loc>
+    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/changeclothesgirl/</loc>
+    <lastmod>2024-09-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/book2/</loc>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/book1/</loc>
+    <lastmod>2024-09-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/workboysinger/</loc>
     <lastmod>2024-09-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/comfyuimokuai/</loc>
@@ -36,9 +51,6 @@
     <lastmod>2024-08-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/food2/</loc>
-    <lastmod>2024-08-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2024-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/food1/</loc>
