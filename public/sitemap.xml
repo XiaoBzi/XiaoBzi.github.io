@@ -2,20 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/book4/</loc>
+    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ubuntu/</loc>
-    <lastmod>2024-09-13T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2024-09-18T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E9%87%8D%E5%BA%86/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/recommendplace2/</loc>
+    <lastmod>2024-09-17T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/book3/</loc>
+    <lastmod>2024-09-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/changeclothesboy/</loc>
     <lastmod>2024-09-13T00:00:00+00:00</lastmod>
@@ -27,9 +45,6 @@
     <lastmod>2024-09-12T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/book2/</loc>
-    <lastmod>2024-09-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2024-09-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/book1/</loc>
@@ -58,12 +73,6 @@
   </url><url>
     <loc>http://localhost:1313/workCQ/</loc>
     <lastmod>2024-08-20T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</loc>
-    <lastmod>2024-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E9%87%8D%E5%BA%86/</loc>
-    <lastmod>2024-05-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/recommendplace1/</loc>
     <lastmod>2024-05-10T00:00:00+00:00</lastmod>
