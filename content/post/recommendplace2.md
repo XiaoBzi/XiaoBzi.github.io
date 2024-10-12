@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "金山意库轻艺术空间"
-description: "重庆市两江新区"
+description: "重庆市渝北区"
 excerpt: "none"
 date:    2024-09-17
 author:     "甜甜圈"
