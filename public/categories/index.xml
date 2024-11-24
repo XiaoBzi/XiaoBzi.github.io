@@ -6,8 +6,29 @@
     <description>Recent content in Categories on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>爱好小屋</title>
+      <link>http://localhost:1313/categories/%E7%88%B1%E5%A5%BD%E5%B0%8F%E5%B1%8B/</link>
+      <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E7%88%B1%E5%A5%BD%E5%B0%8F%E5%B1%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>美食日记</title>
+      <link>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</link>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>我的工作</title>
+      <link>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</guid>
+      <description></description>
+    </item>
     <item>
       <title>美景推荐</title>
       <link>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</link>
@@ -16,23 +37,9 @@
       <description></description>
     </item>
     <item>
-      <title>美食日记</title>
-      <link>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</link>
-      <pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>我的工作</title>
-      <link>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</link>
-      <pubDate>Fri, 13 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>美食推荐</title>
       <link>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%8E%A8%E8%8D%90/</link>
-      <pubDate>Thu, 20 Aug 2020 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%8E%A8%E8%8D%90/</guid>
       <description></description>
     </item>

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="AIGC小小仓库">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="img/fj1.jpg">
+    <meta property="twitter:image" content="img/fj1.jpg" />
+    
+
+    
+    <meta name="title" content="3D点云目标检测加追踪后处理" />
+    <meta property="og:title" content="3D点云目标检测加追踪后处理" />
+    <meta property="twitter:title" content="3D点云目标检测加追踪后处理" />
+    
+
+    
+    <meta name="description" content="无需标注第一帧的自动追踪算法，轻量准确实时">
+    <meta property="og:description" content="无需标注第一帧的自动追踪算法，轻量准确实时" />
+    <meta property="twitter:description" content="无需标注第一帧的自动追踪算法，轻量准确实时" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Gray,网络日志, 博客, Blog,个人网站,AI, comfyui初体验, 生活, 学习, 美食, 日常">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>3D点云目标检测加追踪后处理 | 人生初体验 </title>
+
+    <link rel="canonical" href="/worktadiao/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">AIGC小小仓库</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/">我的工作</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%88%B1%E5%A5%BD%E5%B0%8F%E5%B1%8B/">爱好小屋</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/">美景推荐</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%BE%8E%E9%A3%9F%E6%8E%A8%E8%8D%90/">美食推荐</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/">美食日记</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/songs//">我的歌单</a></li>
+                    
+                        <li><a href="/about//">关于我</a></li>
+                    
+		            
+                   <li>
+                    <a href="/search"><i class="fa fa-search"></i></a>
+                </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/fj1.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/ubuntu" title="ubuntu">
+                            ubuntu
+                        </a>
+                        
+                    </div>
+                    <h1>3D点云目标检测加追踪后处理</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;甜甜圈&#34;
+                             
+                            on 
+                            Monday, November 11, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="多场景项目成果展示视频">多场景项目成果展示视频</h2>
+<p>训练命令：python tools/train.py &ndash;cfg_file /home/students/master/2023/luojl/td/tools/cfgs/custom_models/centerpoint.yaml
+测试命令：python tools/demo2.py &ndash;ckpt /home/students/master/2023/luojl/openpcdet/output/home/students/master/2023/luojl/td/tools/cfgs/custom_models/pointpillar1/default/ckpt/checkpoint_epoch_334.pth
+最终测试导出视频图片并且保存一段时间所有结果到json文件命令：tools/demotrack.py &ndash;ckpt /home/students/master/2023/luojl/openpcdet/output/home/students/master/2023/luojl/td/tools/cfgs/custom_models/pointpillar1/default/ckpt/checkpoint_epoch_334.pth
+生成数据集索引pkl命令：cd openpcdet python -m pcdet.datasets.custom.custom_dataset create_custom_infos /home/students/master/2023/luojl/td/tools/cfgs/dataset_configs/custom_dataset.yaml
+查看pkl是否正确命令：python show.py
+数据集要长成这样才能训练测试：
+
+  <img src="/img/work/tdtip2.png" alt="加载中……">
+
+
+<style>
+    .meta-media {
+      position: relative;
+      margin-bottom: 30px;
+      display: flex;
+      width: 100%;
+      height: 0;
+      padding-bottom: 75%;
+    }
+    .video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    </style>
+    <div class="meta-media">
+        <iframe src="//player.bilibili.com/player.html?isOutside=true&amp;aid=113537192041463&amp;bvid=BV1qpBxYqEDv&amp;cid=26960006014&amp;p=1&high_quality=1" frameborder="no" scrolling="yes" allowfullscreen="allowfullscreen" high_quality="1" framespacing="1" class="video" >
+    </iframe>
+    </div>
+代码和项目使用文档以及数据集会之后上传到我的GitHub上，欢迎交流学习。</p>
+<h4 id="-3d点云目标检测网络best-in-our-dataset-is-centerpointpillar">* 3D点云目标检测网络best in our dataset is centerpoint+pillar：</h4>
+<p>比较难搞定的配置文件如下：
+centerpoint.yaml <br>
+注意： REMOVE_OUTSIDE_BOXES: False不然会报递归溢出 POINT_CLOUD_RANGE: [-74.88, -74.88, 0, 74.88, 74.88, 20]最后一项和POINT_CLOUD_RANGE: [-74.88, -74.88, 0, 74.88, 74.88, 20]最后一项相同，不然会报网络尺度错误,还要x,y的倍数对应关系。
+
+  <img src="/img/work/tadiaotip1.png" alt="加载中……">
+
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>CLASS_NAMES: [&#39;couple&#39;]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DATA_CONFIG:
+</span></span><span style="display:flex;"><span>    _BASE_CONFIG_: /home/students/master/2023/luojl/td/tools/cfgs/dataset_configs/custom_dataset.yaml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    POINT_CLOUD_RANGE: [-74.88, -74.88, 0, 74.88, 74.88, 20]
+</span></span><span style="display:flex;"><span>    DATA_PROCESSOR:
+</span></span><span style="display:flex;"><span>        -   NAME: mask_points_and_boxes_outside_range
+</span></span><span style="display:flex;"><span>            REMOVE_OUTSIDE_BOXES: False
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        -   NAME: shuffle_points
+</span></span><span style="display:flex;"><span>            SHUFFLE_ENABLED: {
+</span></span><span style="display:flex;"><span>                &#39;train&#39;: True,
+</span></span><span style="display:flex;"><span>                &#39;test&#39;: True
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        -   NAME: transform_points_to_voxels
+</span></span><span style="display:flex;"><span>            POINT_CLOUD_RANGE: [-74.88, -74.88, 0, 74.88, 74.88, 20]
+</span></span><span style="display:flex;"><span>            MAX_POINTS_PER_VOXEL: 20
+</span></span><span style="display:flex;"><span>            MAX_NUMBER_OF_VOXELS: {
+</span></span><span style="display:flex;"><span>                &#39;train&#39;: 150000,
+</span></span><span style="display:flex;"><span>                &#39;test&#39;: 150000
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MODEL:
+</span></span><span style="display:flex;"><span>    NAME: CenterPoint
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    VFE:
+</span></span><span style="display:flex;"><span>        NAME: PillarVFE
+</span></span><span style="display:flex;"><span>        WITH_DISTANCE: False
+</span></span><span style="display:flex;"><span>        USE_ABSLOTE_XYZ: True
+</span></span><span style="display:flex;"><span>        USE_NORM: True
+</span></span><span style="display:flex;"><span>        NUM_FILTERS: [ 64, 64 ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    MAP_TO_BEV:
+</span></span><span style="display:flex;"><span>        NAME: PointPillarScatter
+</span></span><span style="display:flex;"><span>        NUM_BEV_FEATURES: 64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    BACKBONE_2D:
+</span></span><span style="display:flex;"><span>        NAME: BaseBEVBackbone
+</span></span><span style="display:flex;"><span>        LAYER_NUMS: [ 3, 5, 5 ]
+</span></span><span style="display:flex;"><span>        LAYER_STRIDES: [ 1, 2, 2 ]
+</span></span><span style="display:flex;"><span>        NUM_FILTERS: [ 64, 128, 256 ]
+</span></span><span style="display:flex;"><span>        UPSAMPLE_STRIDES: [ 1, 2, 4 ]
+</span></span><span style="display:flex;"><span>        NUM_UPSAMPLE_FILTERS: [ 128, 128, 128 ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    DENSE_HEAD:
+</span></span><span style="display:flex;"><span>        NAME: CenterHead
+</span></span><span style="display:flex;"><span>        CLASS_AGNOSTIC: False
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        CLASS_NAMES_EACH_HEAD: [
+</span></span><span style="display:flex;"><span>            [&#39;couple&#39;]
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        SHARED_CONV_CHANNEL: 64
+</span></span><span style="display:flex;"><span>        USE_BIAS_BEFORE_NORM: True
+</span></span><span style="display:flex;"><span>        NUM_HM_CONV: 2
+</span></span><span style="display:flex;"><span>        SEPARATE_HEAD_CFG:
+</span></span><span style="display:flex;"><span>            HEAD_ORDER: [&#39;center&#39;, &#39;center_z&#39;, &#39;dim&#39;, &#39;rot&#39;]
+</span></span><span style="display:flex;"><span>            HEAD_DICT: {
+</span></span><span style="display:flex;"><span>                &#39;center&#39;: {&#39;out_channels&#39;: 2, &#39;num_conv&#39;: 2},
+</span></span><span style="display:flex;"><span>                &#39;center_z&#39;: {&#39;out_channels&#39;: 1, &#39;num_conv&#39;: 2},
+</span></span><span style="display:flex;"><span>                &#39;dim&#39;: {&#39;out_channels&#39;: 3, &#39;num_conv&#39;: 2},
+</span></span><span style="display:flex;"><span>                &#39;rot&#39;: {&#39;out_channels&#39;: 2, &#39;num_conv&#39;: 2},
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        TARGET_ASSIGNER_CONFIG:
+</span></span><span style="display:flex;"><span>            FEATURE_MAP_STRIDE: 1
+</span></span><span style="display:flex;"><span>            NUM_MAX_OBJS: 500
+</span></span><span style="display:flex;"><span>            GAUSSIAN_OVERLAP: 0.1
+</span></span><span style="display:flex;"><span>            MIN_RADIUS: 2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        LOSS_CONFIG:
+</span></span><span style="display:flex;"><span>            LOSS_WEIGHTS: {
+</span></span><span style="display:flex;"><span>                &#39;cls_weight&#39;: 1.0,
+</span></span><span style="display:flex;"><span>                &#39;loc_weight&#39;: 2.0,
+</span></span><span style="display:flex;"><span>                &#39;code_weights&#39;: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        POST_PROCESSING:
+</span></span><span style="display:flex;"><span>            SCORE_THRESH: 0.7
+</span></span><span style="display:flex;"><span>            POST_CENTER_LIMIT_RANGE: [-80, -80, -10.0, 80, 80, 10.0]
+</span></span><span style="display:flex;"><span>            MAX_OBJ_PER_SAMPLE: 500
+</span></span><span style="display:flex;"><span>            NMS_CONFIG:
+</span></span><span style="display:flex;"><span>                NMS_TYPE: nms_gpu
+</span></span><span style="display:flex;"><span>                NMS_THRESH: 0.7
+</span></span><span style="display:flex;"><span>                NMS_PRE_MAXSIZE: 4096
+</span></span><span style="display:flex;"><span>                NMS_POST_MAXSIZE: 500
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    POST_PROCESSING:
+</span></span><span style="display:flex;"><span>        RECALL_THRESH_LIST: [0.3, 0.5, 0.7]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        EVAL_METRIC: waymo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>OPTIMIZATION:
+</span></span><span style="display:flex;"><span>    BATCH_SIZE_PER_GPU: 4
+</span></span><span style="display:flex;"><span>    NUM_EPOCHS: 300
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    OPTIMIZER: adam_onecycle
+</span></span><span style="display:flex;"><span>    LR: 0.003
+</span></span><span style="display:flex;"><span>    WEIGHT_DECAY: 0.01
+</span></span><span style="display:flex;"><span>    MOMENTUM: 0.9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    MOMS: [0.95, 0.85]
+</span></span><span style="display:flex;"><span>    PCT_START: 0.4
+</span></span><span style="display:flex;"><span>    DIV_FACTOR: 10
+</span></span><span style="display:flex;"><span>    DECAY_STEP_LIST: [35, 45]
+</span></span><span style="display:flex;"><span>    LR_DECAY: 0.1
+</span></span><span style="display:flex;"><span>    LR_CLIP: 0.0000001
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    LR_WARMUP: False
+</span></span><span style="display:flex;"><span>    WARMUP_EPOCH: 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    GRAD_NORM_CLIP: 10
+</span></span></code></pre></div><p>customdataset.yaml</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>DATASET: &#39;CustomDataset&#39;
+</span></span><span style="display:flex;"><span>DATA_PATH: &#39;/home/students/master/2023/luojl/&#39;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># If this config file is modified then pcdet/models/detectors/detector3d_template.py:
+</span></span><span style="display:flex;"><span># Detector3DTemplate::build_networks:model_info_dict needs to be modified.
+</span></span><span style="display:flex;"><span>POINT_CLOUD_RANGE: [ -190.22, -107.33, -420.26,  807.27 , 208.22, 680.14] # x=[-70.4, 70.4], y=[-40,40], z=[-3,1]
+</span></span><span style="display:flex;"><span># Point Cloud Center:        [ 6.32  2.91 30.86]        
+</span></span><span style="display:flex;"><span># Point Cloud Minimums:      [ -19.22 -107.33  -42.26]  
+</span></span><span style="display:flex;"><span># Point Cloud Maximums:      [87.27 28.22 68.14]        
+</span></span><span style="display:flex;"><span># Initial Translation:       [  -6.32   -2.91 -235.56]  
+</span></span><span style="display:flex;"><span>DATA_SPLIT: {
+</span></span><span style="display:flex;"><span>    &#39;train&#39;: train,
+</span></span><span style="display:flex;"><span>    &#39;test&#39;: val
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>INFO_PATH: {
+</span></span><span style="display:flex;"><span>    &#39;train&#39;: [custom_infos_train.pkl],
+</span></span><span style="display:flex;"><span>    &#39;test&#39;: [custom_infos_val.pkl],
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>GET_ITEM_LIST: [&#34;points&#34;]
+</span></span><span style="display:flex;"><span>FOV_POINTS_ONLY: False
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>POINT_FEATURE_ENCODING: {
+</span></span><span style="display:flex;"><span>    encoding_type: absolute_coordinates_encoding,
+</span></span><span style="display:flex;"><span>    used_feature_list: [&#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;intensity&#39;],
+</span></span><span style="display:flex;"><span>    src_feature_list: [&#39;x&#39;, &#39;y&#39;, &#39;z&#39;, &#39;intensity&#39;],
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Same to pv_rcnn[DATA_AUGMENTOR]
+</span></span><span style="display:flex;"><span>DATA_AUGMENTOR:
+</span></span><span style="display:flex;"><span>    DISABLE_AUG_LIST: [&#39;placeholder&#39;]
+</span></span><span style="display:flex;"><span>    AUG_CONFIG_LIST:
+</span></span><span style="display:flex;"><span>        - NAME: gt_sampling
+</span></span><span style="display:flex;"><span>          # Notice that &#39;USE_ROAD_PLANE&#39;
+</span></span><span style="display:flex;"><span>          USE_ROAD_PLANE: False
+</span></span><span style="display:flex;"><span>          DB_INFO_PATH:
+</span></span><span style="display:flex;"><span>              - custom_dbinfos_train.pkl # pcdet/datasets/augmentor/database_ampler.py:line 26
+</span></span><span style="display:flex;"><span>          PREPARE: {
+</span></span><span style="display:flex;"><span>             filter_by_min_points: [&#39;couple:5&#39;],
+</span></span><span style="display:flex;"><span>             filter_by_difficulty: [-1],
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>          SAMPLE_GROUPS: [&#39;couple:5&#39;]
+</span></span><span style="display:flex;"><span>          NUM_POINT_FEATURES: 4
+</span></span><span style="display:flex;"><span>          DATABASE_WITH_FAKELIDAR: False
+</span></span><span style="display:flex;"><span>          REMOVE_EXTRA_WIDTH: [0.0, 0.0, 0.0]
+</span></span><span style="display:flex;"><span>          LIMIT_WHOLE_SCENE: True
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        - NAME: random_world_flip
+</span></span><span style="display:flex;"><span>          ALONG_AXIS_LIST: [&#39;x&#39;]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        - NAME: random_world_rotation
+</span></span><span style="display:flex;"><span>          WORLD_ROT_ANGLE: [-0.78539816, 0.78539816]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        - NAME: random_world_scaling
+</span></span><span style="display:flex;"><span>          WORLD_SCALE_RANGE: [0.95, 1.05]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DATA_PROCESSOR:
+</span></span><span style="display:flex;"><span>    - NAME: mask_points_and_boxes_outside_range
+</span></span><span style="display:flex;"><span>      REMOVE_OUTSIDE_BOXES: True
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - NAME: shuffle_points
+</span></span><span style="display:flex;"><span>      SHUFFLE_ENABLED: {
+</span></span><span style="display:flex;"><span>        &#39;train&#39;: True,
+</span></span><span style="display:flex;"><span>        &#39;test&#39;: False
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - NAME: transform_points_to_voxels
+</span></span><span style="display:flex;"><span>      VOXEL_SIZE: [0.05, 0.05, 0.1]
+</span></span><span style="display:flex;"><span>      MAX_POINTS_PER_VOXEL: 5
+</span></span><span style="display:flex;"><span>      MAX_NUMBER_OF_VOXELS: {
+</span></span><span style="display:flex;"><span>        &#39;train&#39;: 16000,
+</span></span><span style="display:flex;"><span>        &#39;test&#39;: 40000
+</span></span><span style="display:flex;"><span>      }
+</span></span></code></pre></div><p>pcdet/custom.py仅加载点云数据不加载图像</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>import copy
+</span></span><span style="display:flex;"><span>import pickle
+</span></span><span style="display:flex;"><span>import os
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>import numpy as np
+</span></span><span style="display:flex;"><span>from skimage import io
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>from ...ops.roiaware_pool3d import roiaware_pool3d_utils
+</span></span><span style="display:flex;"><span>from ...utils import box_utils, common_utils, object3d_custom
+</span></span><span style="display:flex;"><span>from ..dataset import DatasetTemplate
+</span></span><span style="display:flex;"><span># 定义属于自己的数据集，集成数据集模板
+</span></span><span style="display:flex;"><span>class CustomDataset(DatasetTemplate):
+</span></span><span style="display:flex;"><span>    def __init__(self, dataset_cfg, class_names, training=True, root_path=None, logger=None, ext=&#39;.bin&#39;):
+</span></span><span style="display:flex;"><span>        &#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>        Args:
+</span></span><span style="display:flex;"><span>            root_path:
+</span></span><span style="display:flex;"><span>            dataset_cfg:
+</span></span><span style="display:flex;"><span>            class_names:
+</span></span><span style="display:flex;"><span>            training:
+</span></span><span style="display:flex;"><span>            logger:
+</span></span><span style="display:flex;"><span>        &#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>        super().__init__(
+</span></span><span style="display:flex;"><span>            dataset_cfg=dataset_cfg, class_names=class_names, training=training, root_path=root_path, logger=logger
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        print(&#39;root_path&#39;,root_path)
+</span></span><span style="display:flex;"><span>        self.split = self.dataset_cfg.DATA_SPLIT[self.mode]
+</span></span><span style="display:flex;"><span>        self.root_split_path = os.path.join(self.root_path, (&#39;training&#39; if self.split != &#39;test&#39; else &#39;testing&#39;))
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        split_dir = os.path.join(self.root_path, &#39;ImageSets&#39;,(self.split + &#39;.txt&#39;))
+</span></span><span style="display:flex;"><span>        self.sample_id_list = [x.strip() for x in open(split_dir).readlines()] if os.path.exists(split_dir) else None
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        self.custom_infos = []
+</span></span><span style="display:flex;"><span>        self.include_custom_data(self.mode)
+</span></span><span style="display:flex;"><span>        self.ext = ext
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    # 用于导入自定义数据
+</span></span><span style="display:flex;"><span>    def include_custom_data(self, mode):
+</span></span><span style="display:flex;"><span>        if self.logger is not None:
+</span></span><span style="display:flex;"><span>            self.logger.info(&#39;Loading Custom dataset.&#39;)
+</span></span><span style="display:flex;"><span>        custom_infos = []
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        for info_path in self.dataset_cfg.INFO_PATH[mode]:
+</span></span><span style="display:flex;"><span>            info_path = self.root_path / info_path
+</span></span><span style="display:flex;"><span>            if not info_path.exists():
+</span></span><span style="display:flex;"><span>                continue
+</span></span><span style="display:flex;"><span>            with open(info_path, &#39;rb&#39;) as f:
+</span></span><span style="display:flex;"><span>                infos = pickle.load(f)
+</span></span><span style="display:flex;"><span>                custom_infos.extend(infos)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        self.custom_infos.extend(custom_infos)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        if self.logger is not None:
+</span></span><span style="display:flex;"><span>            self.logger.info(&#39;Total samples for CUSTOM dataset: %d&#39; % (len(custom_infos)))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    # 用于获取标签的标注信息
+</span></span><span style="display:flex;"><span>    def get_infos(self, num_workers=4, has_label=True, count_inside_pts=True, sample_id_list=None):
+</span></span><span style="display:flex;"><span>        import concurrent.futures as futures
+</span></span><span style="display:flex;"><span>        # 线程函数，主要是为了多线程读取数据，加快处理速度
+</span></span><span style="display:flex;"><span>        print(sample_id_list)
+</span></span><span style="display:flex;"><span>        # 处理一帧
+</span></span><span style="display:flex;"><span>        def process_single_scene(sample_idx):
+</span></span><span style="display:flex;"><span>            print(&#39;%s sample_idx: %s&#39; % (self.split, sample_idx))
+</span></span><span style="display:flex;"><span>            # 创建一个用于存储一帧信息的空字典
+</span></span><span style="display:flex;"><span>            info = {}
+</span></span><span style="display:flex;"><span>            # 定义该帧点云信息，pointcloud_info
+</span></span><span style="display:flex;"><span>            pc_info = {&#39;num_features&#39;: 4, &#39;lidar_idx&#39;: sample_idx}
+</span></span><span style="display:flex;"><span>            # 将pc_info这个字典作为info字典里的一个键值对的值，其键名为‘point_cloud’添加到info里去
+</span></span><span style="display:flex;"><span>            info[&#39;point_cloud&#39;] = pc_info
+</span></span><span style="display:flex;"><span>            &#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>            # image信息和calib信息都暂时不需要
+</span></span><span style="display:flex;"><span>            # image_info = {&#39;image_idx&#39;: sample_idx, &#39;image_shape&#39;: self.get_image_shape(sample_idx)}
+</span></span><span style="display:flex;"><span>            # info[&#39;image&#39;] = image_info
+</span></span><span style="display:flex;"><span>            # calib = self.get_calib(sample_idx)
+</span></span><span style="display:flex;"><span>            # P2 = np.concatenate([calib.P2, np.array([[0., 0., 0., 1.]])], axis=0)
+</span></span><span style="display:flex;"><span>            # R0_4x4 = np.zeros([4, 4], dtype=calib.R0.dtype)
+</span></span><span style="display:flex;"><span>            # R0_4x4[3, 3] = 1.
+</span></span><span style="display:flex;"><span>            # R0_4x4[:3, :3] = calib.R0
+</span></span><span style="display:flex;"><span>            # V2C_4x4 = np.concatenate([calib.V2C, np.array([[0., 0., 0., 1.]])], axis=0)
+</span></span><span style="display:flex;"><span>            # calib_info = {&#39;P2&#39;: P2, &#39;R0_rect&#39;: R0_4x4, &#39;Tr_velo_to_cam&#39;: V2C_4x4}
+</span></span><span style="display:flex;"><span>            # info[&#39;calib&#39;] = calib_info
+</span></span><span style="display:flex;"><span>            &#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>            if has_label:
+</span></span><span style="display:flex;"><span>                # 通过get_label函数，读取出该帧的标签标注信息
+</span></span><span style="display:flex;"><span>                obj_list = self.get_label(sample_idx)
+</span></span><span style="display:flex;"><span>                # 创建用于存储该帧标注信息的空字典
+</span></span><span style="display:flex;"><span>                annotations = {}
+</span></span><span style="display:flex;"><span>                # 下方根据标注文件里的属性将对应的信息加入到annotations的键值对，可以根据自己的需求取舍
+</span></span><span style="display:flex;"><span>                annotations[&#39;name&#39;] = np.array([obj.cls_type for obj in obj_list])
+</span></span><span style="display:flex;"><span>                annotations[&#39;truncated&#39;] = np.array([obj.truncation for obj in obj_list])
+</span></span><span style="display:flex;"><span>                annotations[&#39;occluded&#39;] = np.array([obj.occlusion for obj in obj_list])
+</span></span><span style="display:flex;"><span>                annotations[&#39;alpha&#39;] = np.array([obj.alpha for obj in obj_list])
+</span></span><span style="display:flex;"><span>                annotations[&#39;bbox&#39;] = np.concatenate([obj.box2d.reshape(1, 4) for obj in obj_list], axis=0)
+</span></span><span style="display:flex;"><span>                annotations[&#39;dimensions&#39;] = np.array([[obj.l, obj.h, obj.w] for obj in obj_list])  # lhw(camera) format
+</span></span><span style="display:flex;"><span>                annotations[&#39;location&#39;] = np.concatenate([obj.loc.reshape(1, 3) for obj in obj_list], axis=0)
+</span></span><span style="display:flex;"><span>                annotations[&#39;rotation_y&#39;] = np.array([obj.ry for obj in obj_list])
+</span></span><span style="display:flex;"><span>                annotations[&#39;score&#39;] = np.array([obj.score for obj in obj_list])
+</span></span><span style="display:flex;"><span>                #
+</span></span><span style="display:flex;"><span>                # annotations[&#39;difficulty&#39;] = np.array([obj.level for obj in obj_list], np.int32)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>                # 统计有效物体的个数，即去掉类别名称为“Dontcare”以外的
+</span></span><span style="display:flex;"><span>                num_objects = len([obj.cls_type for obj in obj_list if obj.cls_type != &#39;DontCare&#39;])
+</span></span><span style="display:flex;"><span>                # 统计物体的总个数，包括了Dontcare
+</span></span><span style="display:flex;"><span>                num_gt = len(annotations[&#39;name&#39;])
+</span></span><span style="display:flex;"><span>                # 获得当前的index信息
+</span></span><span style="display:flex;"><span>                index = list(range(num_objects)) + [-1] * (num_gt - num_objects)
+</span></span><span style="display:flex;"><span>                annotations[&#39;index&#39;] = np.array(index, dtype=np.int32)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>                # 从annotations里提取出从标注信息里获取的location、dims、rots等信息，赋值给对应的变量
+</span></span><span style="display:flex;"><span>                loc = annotations[&#39;location&#39;][:num_objects]
+</span></span><span style="display:flex;"><span>                dims = annotations[&#39;dimensions&#39;][:num_objects]
+</span></span><span style="display:flex;"><span>                rots = annotations[&#39;rotation_y&#39;][:num_objects]
+</span></span><span style="display:flex;"><span>                # 由于我们的数据集本来就是基于雷达坐标系标注，所以无需坐标转换
+</span></span><span style="display:flex;"><span>                #loc_lidar = calib.rect_to_lidar(loc)
+</span></span><span style="display:flex;"><span>                loc_lidar = self.get_calib(loc)
+</span></span><span style="display:flex;"><span>                # 原来的dims排序是高宽长hwl,现在转到pcdet的统一坐标系下,按lhw排布
+</span></span><span style="display:flex;"><span>                l, h, w = dims[:, 0:1], dims[:, 1:2], dims[:, 2:3]
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>                # 由于我们基于雷达坐标系标注，所以获取的中心点本来就是空间中心，所以无需从底面中心转到空间中心
+</span></span><span style="display:flex;"><span>                # bottom center -&gt; object center: no need for loc_lidar[:, 2] += h[:, 0] / 2
+</span></span><span style="display:flex;"><span>                # print(&#34;sample_idx: &#34;, sample_idx, &#34;loc: &#34;, loc, &#34;loc_lidar: &#34; , sample_idx, loc_lidar)
+</span></span><span style="display:flex;"><span>                # get gt_boxes_lidar see https://zhuanlan.zhihu.com/p/152120636
+</span></span><span style="display:flex;"><span>                # loc_lidar[:, 2] += h[:, 0] / 2
+</span></span><span style="display:flex;"><span>                gt_boxes_lidar = np.concatenate([loc_lidar, l, w, h, -(np.pi / 2 + rots[..., np.newaxis])], axis=1)
+</span></span><span style="display:flex;"><span>                print(&#39;gt_boxes_lidar&#39;,gt_boxes_lidar)
+</span></span><span style="display:flex;"><span>                # 将雷达坐标系下的真值框信息存入annotations中
+</span></span><span style="display:flex;"><span>                annotations[&#39;gt_boxes_lidar&#39;] = gt_boxes_lidar
+</span></span><span style="display:flex;"><span>                # 将annotations这整个字典作为info字典里的一个键值对的值
+</span></span><span style="display:flex;"><span>                info[&#39;annos&#39;] = annotations
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            return info
+</span></span><span style="display:flex;"><span>            # 后续的由于没有calib信息和image信息，所以可以直接注释
+</span></span><span style="display:flex;"><span>            &#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>            #     if count_inside_pts:
+</span></span><span style="display:flex;"><span>            #         points = self.get_lidar(sample_idx)
+</span></span><span style="display:flex;"><span>            #         calib = self.get_calib(sample_idx)
+</span></span><span style="display:flex;"><span>            #         pts_rect = calib.lidar_to_rect(points[:, 0:3])
+</span></span><span style="display:flex;"><span>            #         fov_flag = self.get_fov_flag(pts_rect, info[&#39;image&#39;][&#39;image_shape&#39;], calib)
+</span></span><span style="display:flex;"><span>            #         pts_fov = points[fov_flag]
+</span></span><span style="display:flex;"><span>            #         corners_lidar = box_utils.boxes_to_corners_3d(gt_boxes_lidar)
+</span></span><span style="display:flex;"><span>            #         num_points_in_gt = -np.ones(num_gt, dtype=np.int32)
+</span></span><span style="display:flex;"><span>            #         for k in range(num_objects):
+</span></span><span style="display:flex;"><span>            #             flag = box_utils.in_hull(pts_fov[:, 0:3], corners_lidar[k])
+</span></span><span style="display:flex;"><span>            #             num_points_in_gt[k] = flag.sum()
+</span></span><span style="display:flex;"><span>            #         annotations[&#39;num_points_in_gt&#39;] = num_points_in_gt
+</span></span><span style="display:flex;"><span>            # return info
+</span></span><span style="display:flex;"><span>            &#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>        sample_id_list = sample_id_list if sample_id_list is not None else self.sample_id_list
+</span></span><span style="display:flex;"><span>        with futures.ThreadPoolExecutor(num_workers) as executor:
+</span></span><span style="display:flex;"><span>            infos = executor.map(process_single_scene, sample_id_list)
+</span></span><span style="display:flex;"><span>        return list(infos)
+</span></span><span style="display:flex;"><span>        # 此时返回值infos是列表，列表元素为字典类型
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>    # 用于获取标定信息
+</span></span><span style="display:flex;"><span>    def get_calib(self, loc):
+</span></span><span style="display:flex;"><span>        # calib_file = self.root_split_path / &#39;calib&#39; / (&#39;%s.txt&#39; % idx)
+</span></span><span style="display:flex;"><span>        # assert calib_file.exists()
+</span></span><span style="display:flex;"><span>        # return calibration_kitti.Calibration(calib_file)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        # loc_lidar = np.concatenate([np.array((float(loc_obj[2]),float(-loc_obj[0]),float(loc_obj[1]-2.3)),dtype=np.float32).reshape(1,3) for loc_obj in loc])
+</span></span><span style="display:flex;"><span>        # return loc_lidar
+</span></span><span style="display:flex;"><span>        # 这里做了一个由相机坐标系到雷达坐标系翻转（都遵从右手坐标系），但是 -2.3这个数值具体如何得来需要再看下
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        # 我们的label中的xyz就是在雷达坐标系下,不用转变,直接赋值
+</span></span><span style="display:flex;"><span>        loc_lidar = np.concatenate([np.array((float(loc_obj[0]),float(loc_obj[1]),float(loc_obj[2])),dtype=np.float32).reshape(1,3) for loc_obj in loc])
+</span></span><span style="display:flex;"><span>        return loc_lidar
+</span></span><span style="display:flex;"><span>                
+</span></span><span style="display:flex;"><span>    # 用于获取标签
+</span></span><span style="display:flex;"><span>    def get_label(self, idx):
+</span></span><span style="display:flex;"><span>        # 从指定路径中提取txt内容
+</span></span><span style="display:flex;"><span>        label_file = self.root_split_path / &#39;label_2&#39; / (&#39;%s.txt&#39; % idx)
+</span></span><span style="display:flex;"><span>        assert label_file.exists()
+</span></span><span style="display:flex;"><span>        # 主要就是从这个函数里获取具体的信息
+</span></span><span style="display:flex;"><span>        return object3d_custom.get_objects_from_label(label_file)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    # 用于获取雷达点云信息
+</span></span><span style="display:flex;"><span>    def get_lidar(self, idx, getitem):
+</span></span><span style="display:flex;"><span>        &#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>            Loads point clouds for a sample
+</span></span><span style="display:flex;"><span>                Args:
+</span></span><span style="display:flex;"><span>                    index (int): Index of the point cloud file to get.
+</span></span><span style="display:flex;"><span>                Returns:
+</span></span><span style="display:flex;"><span>                    np.array(N, 4): point cloud.
+</span></span><span style="display:flex;"><span>        &#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>        # get lidar statistics
+</span></span><span style="display:flex;"><span>        if getitem == True:
+</span></span><span style="display:flex;"><span>            lidar_file = self.root_split_path + &#39;/velodyne/&#39; + (&#39;%s.bin&#39; % idx)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        else:
+</span></span><span style="display:flex;"><span>            lidar_file = self.root_split_path / &#39;velodyne&#39; / (&#39;%s.bin&#39; % idx)
+</span></span><span style="display:flex;"><span>        return np.fromfile(str(lidar_file), dtype=np.float32).reshape(-1, 4)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    # 用于数据集划分
+</span></span><span style="display:flex;"><span>    def set_split(self, split):
+</span></span><span style="display:flex;"><span>        super().__init__(
+</span></span><span style="display:flex;"><span>            dataset_cfg=self.dataset_cfg, class_names=self.class_names, training=self.training, root_path=self.root_path, logger=self.logger
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>        self.split = split
+</span></span><span style="display:flex;"><span>        self.root_split_path = self.root_path / (&#39;training&#39; if self.split != &#39;test&#39; else &#39;testing&#39;)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        split_dir = self.root_path / &#39;ImageSets&#39; / (self.split + &#39;.txt&#39;)
+</span></span><span style="display:flex;"><span>        self.sample_id_list = [x.strip() for x in open(split_dir).readlines()] if split_dir.exists() else None
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    # 创建真值数据库
+</span></span><span style="display:flex;"><span>    # Create gt database for data augmentation
+</span></span><span style="display:flex;"><span>    def create_groundtruth_database(self, info_path=None, used_classes=None, split=&#39;train&#39;):
+</span></span><span style="display:flex;"><span>            import torch
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            database_save_path = Path(self.root_path) / (&#39;gt_database&#39; if split == &#39;train&#39; else (&#39;gt_database_%s&#39; % split))
+</span></span><span style="display:flex;"><span>            db_info_save_path = Path(self.root_path) / (&#39;custom_dbinfos_%s.pkl&#39; % split)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            database_save_path.mkdir(parents=True, exist_ok=True)
+</span></span><span style="display:flex;"><span>            all_db_infos = {}
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            with open(info_path, &#39;rb&#39;) as f:
+</span></span><span style="display:flex;"><span>                infos = pickle.load(f)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            for k in range(len(infos)):
+</span></span><span style="display:flex;"><span>                print(&#39;gt_database sample: %d/%d&#39; % (k + 1, len(infos)))
+</span></span><span style="display:flex;"><span>                info = infos[k]
+</span></span><span style="display:flex;"><span>                sample_idx = info[&#39;point_cloud&#39;][&#39;lidar_idx&#39;]
+</span></span><span style="display:flex;"><span>                points = self.get_lidar(sample_idx,False)
+</span></span><span style="display:flex;"><span>                annos = info[&#39;annos&#39;]
+</span></span><span style="display:flex;"><span>                names = annos[&#39;name&#39;]
+</span></span><span style="display:flex;"><span>                # difficulty = annos[&#39;difficulty&#39;]
+</span></span><span style="display:flex;"><span>                # bbox = annos[&#39;bbox&#39;]
+</span></span><span style="display:flex;"><span>                gt_boxes = annos[&#39;gt_boxes_lidar&#39;]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                num_obj = gt_boxes.shape[0]
+</span></span><span style="display:flex;"><span>                point_indices = roiaware_pool3d_utils.points_in_boxes_cpu(
+</span></span><span style="display:flex;"><span>                    torch.from_numpy(points[:, 0:3]), torch.from_numpy(gt_boxes)
+</span></span><span style="display:flex;"><span>                ).numpy()  # (nboxes, npoints)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                for i in range(num_obj):
+</span></span><span style="display:flex;"><span>                    filename = &#39;%s_%s_%d.bin&#39; % (sample_idx, names[i], i)
+</span></span><span style="display:flex;"><span>                    filepath = database_save_path / filename
+</span></span><span style="display:flex;"><span>                    gt_points = points[point_indices[i] &gt; 0]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                    gt_points[:, :3] -= gt_boxes[i, :3]
+</span></span><span style="display:flex;"><span>                    with open(filepath, &#39;w&#39;) as f:
+</span></span><span style="display:flex;"><span>                        gt_points.tofile(f)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>                    if (used_classes is None) or names[i] in used_classes:
+</span></span><span style="display:flex;"><span>                        db_path = str(filepath.relative_to(self.root_path))  # gt_database/xxxxx.bin
+</span></span><span style="display:flex;"><span>                        # db_info = {&#39;name&#39;: names[i], &#39;path&#39;: db_path, &#39;image_idx&#39;: sample_idx, &#39;gt_idx&#39;: i,
+</span></span><span style="display:flex;"><span>                        #            &#39;box3d_lidar&#39;: gt_boxes[i], &#39;num_points_in_gt&#39;: gt_points.shape[0],
+</span></span><span style="display:flex;"><span>                        #            &#39;difficulty&#39;: difficulty[i], &#39;bbox&#39;: bbox[i], &#39;score&#39;: annos[&#39;score&#39;][i]}
+</span></span><span style="display:flex;"><span>                        db_info = {&#39;name&#39;: names[i], &#39;path&#39;: db_path,  &#39;gt_idx&#39;: i,
+</span></span><span style="display:flex;"><span>                                &#39;box3d_lidar&#39;: gt_boxes[i], &#39;num_points_in_gt&#39;: gt_points.shape[0], &#39;score&#39;: annos[&#39;score&#39;][i]}
+</span></span><span style="display:flex;"><span>                        
+</span></span><span style="display:flex;"><span>                        if names[i] in all_db_infos:
+</span></span><span style="display:flex;"><span>                            all_db_infos[names[i]].append(db_info)
+</span></span><span style="display:flex;"><span>                        else:
+</span></span><span style="display:flex;"><span>                            all_db_infos[names[i]] = [db_info]
+</span></span><span style="display:flex;"><span>            for k, v in all_db_infos.items():
+</span></span><span style="display:flex;"><span>                print(&#39;Database %s: %d&#39; % (k, len(v)))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>            with open(db_info_save_path, &#39;wb&#39;) as f:
+</span></span><span style="display:flex;"><span>                pickle.dump(all_db_infos, f)
+</span></span><span style="display:flex;"><span>    # 生成预测字典信息
+</span></span><span style="display:flex;"><span>    @staticmethod
+</span></span><span style="display:flex;"><span>    def generate_prediction_dicts(batch_dict, pred_dicts, class_names, output_path=None):
+</span></span><span style="display:flex;"><span>        &#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>        Args:
+</span></span><span style="display:flex;"><span>            batch_dict:
+</span></span><span style="display:flex;"><span>                frame_id:
+</span></span><span style="display:flex;"><span>            pred_dicts: list of pred_dicts
+</span></span><span style="display:flex;"><span>                pred_boxes: (N,7), Tensor
+</span></span><span style="display:flex;"><span>                pred_scores: (N), Tensor
+</span></span><span style="display:flex;"><span>                pred_lables: (N), Tensor
+</span></span><span style="display:flex;"><span>            class_names:
+</span></span><span style="display:flex;"><span>            output_path:
+</span></span><span style="display:flex;"><span>        Returns:
+</span></span><span style="display:flex;"><span>        &#34;&#34;&#34;
+</span></span><span style="display:flex;"><span>        def get_template_prediction(num_smaples):
+</span></span><span style="display:flex;"><span>            ret_dict = {
+</span></span><span style="display:flex;"><span>                &#39;name&#39;: np.zeros(num_smaples), &#39;alpha&#39; : np.zeros(num_smaples),
+</span></span><span style="display:flex;"><span>                &#39;dimensions&#39;: np.zeros([num_smaples, 3]), &#39;location&#39;: np.zeros([num_smaples, 3]),
+</span></span><span style="display:flex;"><span>                &#39;rotation_y&#39;: np.zeros(num_smaples), &#39;score&#39;: np.zeros(num_smaples),
+</span></span><span style="display:flex;"><span>                &#39;boxes_lidar&#39;: np.zeros([num_smaples, 7])
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            return ret_dict
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        def generate_single_sample_dict(batch_index, box_dict):
+</span></span><span style="display:flex;"><span>            pred_scores = box_dict[&#39;pred_scores&#39;].cpu().numpy()
+</span></span><span style="display:flex;"><span>            pred_boxes = box_dict[&#39;pred_boxes&#39;].cpu().numpy()
+</span></span><span style="display:flex;"><span>            pred_labels = box_dict[&#39;pred_labels&#39;].cpu().numpy()
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            # Define an empty template dict to store the prediction information, &#39;pred_scores.shape[0]&#39; means &#39;num_samples&#39;
+</span></span><span style="display:flex;"><span>            pred_dict = get_template_prediction(pred_scores.shape[0])
+</span></span><span style="display:flex;"><span>            # If num_samples equals zero then return the empty dict
+</span></span><span style="display:flex;"><span>            if pred_scores.shape[0] == 0:
+</span></span><span style="display:flex;"><span>                return pred_dict
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            # No calibration files
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            # pred_boxes_camera = box_utils.boxes3d_lidar_to_kitti_camera(pred_boxes,None)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            pred_dict[&#39;name&#39;] = np.array(class_names)[pred_labels - 1]
+</span></span><span style="display:flex;"><span>            pred_dict[&#39;alpha&#39;] = -np.arctan2(-pred_boxes[:, 1], pred_boxes[:, 0]) + pred_boxes[:, 6]
+</span></span><span style="display:flex;"><span>            pred_dict[&#39;dimensions&#39;] = pred_boxes[:, 3:6]
+</span></span><span style="display:flex;"><span>            pred_dict[&#39;location&#39;] = pred_boxes[:, 0:3]
+</span></span><span style="display:flex;"><span>            pred_dict[&#39;rotation_y&#39;] = pred_boxes[:, 6]
+</span></span><span style="display:flex;"><span>            pred_dict[&#39;score&#39;] = pred_scores
+</span></span><span style="display:flex;"><span>            pred_dict[&#39;boxes_lidar&#39;] = pred_boxes
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            return pred_dict
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        annos = []
+</span></span><span style="display:flex;"><span>        for index, box_dict in enumerate(pred_dicts):
+</span></span><span style="display:flex;"><span>            frame_id = batch_dict[&#39;frame_id&#39;][index]
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            single_pred_dict = generate_single_sample_dict(index, box_dict)
+</span></span><span style="display:flex;"><span>            single_pred_dict[&#39;frame_id&#39;] = frame_id
+</span></span><span style="display:flex;"><span>            annos.append(single_pred_dict)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            # Output pred results to Output-path in .txt file 
+</span></span><span style="display:flex;"><span>            if output_path is not None:
+</span></span><span style="display:flex;"><span>                cur_det_file = output_path / (&#39;%s.txt&#39; % frame_id)
+</span></span><span style="display:flex;"><span>                with open(cur_det_file, &#39;w&#39;) as f:
+</span></span><span style="display:flex;"><span>                    bbox = [0,0,50,50]
+</span></span><span style="display:flex;"><span>                    loc = single_pred_dict[&#39;location&#39;]
+</span></span><span style="display:flex;"><span>                    dims = single_pred_dict[&#39;dimensions&#39;]  # lhw -&gt; hwl: lidar -&gt; camera
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>                    for idx in range(len(loc)):
+</span></span><span style="display:flex;"><span>                        print(&#39;%s -1 -1 %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f %.4f&#39;
+</span></span><span style="display:flex;"><span>                            % (single_pred_dict[&#39;name&#39;][idx], single_pred_dict[&#39;alpha&#39;][idx],
+</span></span><span style="display:flex;"><span>                                bbox[0], bbox[1], bbox[2], bbox[3],
+</span></span><span style="display:flex;"><span>                                dims[idx][1], dims[idx][2], dims[idx][0], loc[idx][0],
+</span></span><span style="display:flex;"><span>                                loc[idx][1], loc[idx][2], single_pred_dict[&#39;rotation_y&#39;][idx],
+</span></span><span style="display:flex;"><span>                                single_pred_dict[&#39;score&#39;][idx]), file=f)
+</span></span><span style="display:flex;"><span>            return annos
+</span></span><span style="display:flex;"><span>    &#39;&#39;&#39;def evaluation(self,det_annos,class_names,**kwargs):
+</span></span><span style="display:flex;"><span>        if &#39;name&#39; not in self.custom_infos[0].keys():
+</span></span><span style="display:flex;"><span>            #如果robosense_infos里没有信息，直接返回空字典
+</span></span><span style="display:flex;"><span>            return None,{}
+</span></span><span style="display:flex;"><span>        #参数det_annos 是验证集val下面的所有infos,是一个列表，每个元素是每一帧的字典数据
+</span></span><span style="display:flex;"><span>        #这里 的info是从model出来的，由generate_prediction_dicts函数得到，字典的键key:
+</span></span><span style="display:flex;"><span>        # name , box_center,box_size,box_rotation,tracked_id,    scores,pred_labels,pred_lidar,frame_id
+</span></span><span style="display:flex;"><span>      
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        from .kitti_object_eval_python import eval as kitti_eval
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        #复制一下参数det_annos
+</span></span><span style="display:flex;"><span>        #copy.deepcopy()在元组和列表的嵌套上的效果是一样的，都是进行了深拷贝（递归的）
+</span></span><span style="display:flex;"><span>        #eval_det_info的内容是从model预测出来的结果，等于det_annos
+</span></span><span style="display:flex;"><span>        eval_det_info = copy.deepcopy(det_annos)
+</span></span><span style="display:flex;"><span>       
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        #调用函数，预测得到ap的值1
+</span></span><span style="display:flex;"><span>        #ap_result_str,ap_dict = kitti_eval.get_coco_eval_result1(eval_gt_infos,eval_det_info,class_names)1
+</span></span><span style="display:flex;"><span>        ap_result_str,ap_dict = kitti_eval.get_official_eval_result(eval_gt_infos,eval_det_info,class_names)
+</span></span><span style="display:flex;"><span>        print(&#39;aaaaaa&#39;)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        return ap_result_str,ap_dict &#39;&#39;&#39;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    def evaluation(self, det_annos, class_names, **kwargs):
+</span></span><span style="display:flex;"><span>            if &#39;annos&#39; not in self.custom_infos[0].keys():
+</span></span><span style="display:flex;"><span>                return None, {}
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            from .kitti_object_eval_python import eval as kitti_eval
+</span></span><span style="display:flex;"><span>            from ..kitti import kitti_utils
+</span></span><span style="display:flex;"><span>            print(&#39;detinfo&#39;,det_annos)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            eval_det_annos =  kitti_utils.transform_annotations_to_kitti_format(det_annos, class_names)
+</span></span><span style="display:flex;"><span>            #kitti_class_names = [map_name_to_kitti[x] for x in class_names]
+</span></span><span style="display:flex;"><span>            eval_gt_annos = [copy.deepcopy(info[&#39;annos&#39;]) for info in self.custom_infos]
+</span></span><span style="display:flex;"><span>            eval_gt_annos =  kitti_utils.transform_annotations_to_kitti_format(eval_gt_annos, class_names)
+</span></span><span style="display:flex;"><span>            ap_result_str, ap_dict = kitti_eval.get_official_eval_result(eval_gt_annos,eval_det_annos,  class_names)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>            return ap_result_str, ap_dict
+</span></span><span style="display:flex;"><span>    # 用于返回训练帧的总个数
+</span></span><span style="display:flex;"><span>    def __len__(self):
+</span></span><span style="display:flex;"><span>        if self._merge_all_iters_to_one_epoch:
+</span></span><span style="display:flex;"><span>            return len(self.sample_id_list) * self.total_epochs
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        return len(self.custom_infos)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    # 用于将点云与3D标注框均转至前述统一坐标定义下，送入数据基类提供的self.prepare_data()
+</span></span><span style="display:flex;"><span>    def __getitem__(self, index):  ## 修改如下
+</span></span><span style="display:flex;"><span>        if self._merge_all_iters_to_one_epoch:
+</span></span><span style="display:flex;"><span>            index = index % len(self.custom_infos)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        info = copy.deepcopy(self.custom_infos[index])
+</span></span><span style="display:flex;"><span>        sample_idx = info[&#39;point_cloud&#39;][&#39;lidar_idx&#39;]
+</span></span><span style="display:flex;"><span>        points = self.get_lidar(sample_idx, True)
+</span></span><span style="display:flex;"><span>        input_dict = {
+</span></span><span style="display:flex;"><span>            &#39;frame_id&#39;: self.sample_id_list[index],
+</span></span><span style="display:flex;"><span>            &#39;points&#39;: points
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        if &#39;annos&#39; in info:
+</span></span><span style="display:flex;"><span>            annos = info[&#39;annos&#39;]
+</span></span><span style="display:flex;"><span>            annos = common_utils.drop_info_with_name(annos, name=&#39;DontCare&#39;)
+</span></span><span style="display:flex;"><span>            gt_names = annos[&#39;name&#39;]
+</span></span><span style="display:flex;"><span>            gt_boxes_lidar = annos[&#39;gt_boxes_lidar&#39;]
+</span></span><span style="display:flex;"><span>            input_dict.update({
+</span></span><span style="display:flex;"><span>                &#39;gt_names&#39;: gt_names,
+</span></span><span style="display:flex;"><span>                &#39;gt_boxes&#39;: gt_boxes_lidar
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        data_dict = self.prepare_data(data_dict=input_dict)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>        return data_dict
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span># 用于创建自定义数据集的信息
+</span></span><span style="display:flex;"><span>def create_custom_infos(dataset_cfg, class_names, data_path, save_path, workers=4):
+</span></span><span style="display:flex;"><span>    dataset = CustomDataset(dataset_cfg=dataset_cfg, class_names=class_names, root_path=data_path, training=False)
+</span></span><span style="display:flex;"><span>    print(&#39;data_path&#39;,data_path)
+</span></span><span style="display:flex;"><span>    data_path = r&#39;/home/oseasy/桌面/1/OpenPCDet-master/kitti&#39;
+</span></span><span style="display:flex;"><span>    train_split, val_split = &#39;train&#39;, &#39;val&#39;
+</span></span><span style="display:flex;"><span>   # 定义文件的路径和名称
+</span></span><span style="display:flex;"><span>    train_filename = save_path / (&#39;custom_infos_%s.pkl&#39; % train_split)
+</span></span><span style="display:flex;"><span>    val_filename = save_path / (&#39;custom_infos_%s.pkl&#39; % val_split)
+</span></span><span style="display:flex;"><span>    trainval_filename = save_path / &#39;custom_infos_trainval.pkl&#39;
+</span></span><span style="display:flex;"><span>    test_filename = save_path / &#39;custom_infos_test.pkl&#39;
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    print(&#39;---------------Start to generate data infos---------------&#39;)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    dataset.set_split(train_split)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    # 执行完上一步，得到train相关的保存文件，以及sample_id_list的值为train.txt文件下的数字
+</span></span><span style="display:flex;"><span>    # 下面是得到train.txt中序列相关的所有点云数据的信息，并且进行保存
+</span></span><span style="display:flex;"><span>    custom_infos_train = dataset.get_infos(num_workers=workers, has_label=True, count_inside_pts=True)
+</span></span><span style="display:flex;"><span>    with open(train_filename, &#39;wb&#39;) as f:
+</span></span><span style="display:flex;"><span>        pickle.dump(custom_infos_train, f)
+</span></span><span style="display:flex;"><span>    print(&#39;Custom info train file is saved to %s&#39; % train_filename)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    dataset.set_split(val_split)
+</span></span><span style="display:flex;"><span>    # 对验证集的数据进行信息统计并保存
+</span></span><span style="display:flex;"><span>    custom_infos_val = dataset.get_infos(num_workers=workers, has_label=True, count_inside_pts=True)
+</span></span><span style="display:flex;"><span>    with open(val_filename, &#39;wb&#39;) as f:
+</span></span><span style="display:flex;"><span>        pickle.dump(custom_infos_val, f)
+</span></span><span style="display:flex;"><span>    print(&#39;Custom info val file is saved to %s&#39; % val_filename)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    with open(trainval_filename, &#39;wb&#39;) as f:
+</span></span><span style="display:flex;"><span>        pickle.dump(custom_infos_train + custom_infos_val, f)
+</span></span><span style="display:flex;"><span>    print(&#39;Custom info trainval file is saved to %s&#39; % trainval_filename)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    dataset.set_split(&#39;test&#39;)
+</span></span><span style="display:flex;"><span>    # kitti_infos_test = dataset.get_infos(num_workers=workers, has_label=False, count_inside_pts=False)
+</span></span><span style="display:flex;"><span>    custom_infos_test = dataset.get_infos(num_workers=workers, has_label=False, count_inside_pts=False)
+</span></span><span style="display:flex;"><span>    with open(test_filename, &#39;wb&#39;) as f:
+</span></span><span style="display:flex;"><span>        pickle.dump(custom_infos_test, f)
+</span></span><span style="display:flex;"><span>    print(&#39;Custom info test file is saved to %s&#39; % test_filename)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    print(&#39;---------------Start create groundtruth database for data augmentation---------------&#39;)
+</span></span><span style="display:flex;"><span>    # 用trainfile产生groundtruth_database
+</span></span><span style="display:flex;"><span>    # 只保存训练数据中的gt_box及其包围点的信息，用于数据增强    
+</span></span><span style="display:flex;"><span>    dataset.set_split(train_split)
+</span></span><span style="display:flex;"><span>    dataset.create_groundtruth_database(info_path=train_filename, split=train_split)
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>    print(&#39;---------------Data preparation Done---------------&#39;)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if __name__==&#39;__main__&#39;:
+</span></span><span style="display:flex;"><span>    import sys
+</span></span><span style="display:flex;"><span>    if sys.argv.__len__() &gt; 1 and sys.argv[1] == &#39;create_custom_infos&#39;:
+</span></span><span style="display:flex;"><span>        import yaml
+</span></span><span style="display:flex;"><span>        from pathlib import Path
+</span></span><span style="display:flex;"><span>        from easydict import EasyDict
+</span></span><span style="display:flex;"><span>        dataset_cfg = EasyDict(yaml.safe_load(open(sys.argv[2])))
+</span></span><span style="display:flex;"><span>        ROOT_DIR = (Path(__file__).resolve().parent / &#39;../../../&#39;).resolve()
+</span></span><span style="display:flex;"><span>        create_custom_infos(
+</span></span><span style="display:flex;"><span>            dataset_cfg=dataset_cfg,
+</span></span><span style="display:flex;"><span>            class_names=[&#39;couple&#39;], # 1.修改类别
+</span></span><span style="display:flex;"><span>            data_path=ROOT_DIR / &#39;data&#39; /&#39;custom4&#39;,
+</span></span><span style="display:flex;"><span>            save_path=ROOT_DIR / &#39;data&#39; /&#39;custom4&#39;
+</span></span><span style="display:flex;"><span>        )
+</span></span></code></pre></div><h4 id="-3d点云目标检测跟踪后处理网络-bytetrackv2">* 3D点云目标检测跟踪后处理网络 bytetrackv2：</h4>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/recommendplace7/" data-toggle="tooltip" data-placement="top" title="永川茶山竹海">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/book7/" data-toggle="tooltip" data-placement="top" title="《忧郁不可怕漫画版》">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/others" title="others">
+                            others
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/ubuntu" title="ubuntu">
+                            ubuntu
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E5%90%88%E5%B7%9D" title="合川">
+                            合川
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E6%88%90%E9%83%BD" title="成都">
+                            成都
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E6%B0%B8%E5%B7%9D" title="永川">
+                            永川
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E9%87%8D%E5%BA%86" title="重庆">
+                            重庆
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/%E9%9B%85%E5%AE%89" title="雅安">
+                            雅安
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://im.qq.com/index/">加我为好友：2138205929</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:2138205929@qq.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    <li>
+                        <a target="_blank" href="/your%20wechat%20qr%20code%20image">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-weixin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/yourgithub">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/yourlinkedinid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://stackoverflow.com/users/yourstackoverflowid">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="AIGC小小仓库" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; AIGC小小仓库 2024
+                    
+                    <br>
+                    <a href="https://xiaobzi.github.io/">demo</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaodemo&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

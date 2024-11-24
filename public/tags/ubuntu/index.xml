@@ -6,8 +6,36 @@
     <description>Recent content in Ubuntu on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《录歌1————季风吹向大海 曹阳》</title>
+      <link>http://localhost:1313/hobby1/</link>
+      <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/hobby1/</guid>
+      <description>歌词 谁还在听着天气台 你脸上阴晴 谁能明白 雨已经停了 树还在 左右来回 摇摆 谁离开了地面 想飞得更遥远 说向往大海 谁翅膀没张开 却追得很无奈 只能留下来 等到四</description>
+    </item>
+    <item>
+      <title>《我与地坛》</title>
+      <link>http://localhost:1313/book6/</link>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/book6/</guid>
+      <description>我的梦想 我希望既有一个健美的躯体又有一个了悟人生意义的灵魂,前者可以祈望上帝的恩赐,后者却必须在千难万苦中靠自己去获取。千万不要说:倘若二者</description>
+    </item>
+    <item>
+      <title>《忧郁不可怕漫画版》</title>
+      <link>http://localhost:1313/book7/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/book7/</guid>
+      <description>因为这样那样的原因导致血清素不足时，我们就可能会患上抑郁症。 SSRI是选择性血清再吸收抑制剂。 血清素过多可能会导致心跳加速。 如果遗传基因长度</description>
+    </item>
+    <item>
+      <title>3D点云目标检测加追踪后处理</title>
+      <link>http://localhost:1313/worktadiao/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/worktadiao/</guid>
+      <description>多场景项目成果展示视频 训练命令：python tools/train.py &amp;ndash;cfg_file /home/students/master/2023/luojl/td/tools/cfgs/custom_models/centerpoint.yaml 测试命令：python tools/demo2.py &amp;ndash;ckpt /home/students/master/2023/luojl/openpcdet/output/home/students/master/2023/luojl/td/tools/cfgs/custom_models/pointpillar1/default/ckpt/checkpoint_epoch_334.pth 最终测试导出视频图片并且保存一段时间所有结果到json文件命令</description>
+    </item>
     <item>
       <title>《你可以有情绪，但不能情绪化》</title>
       <link>http://localhost:1313/book5/</link>

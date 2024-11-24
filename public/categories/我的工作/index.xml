@@ -6,8 +6,15 @@
     <description>Recent content in 我的工作 on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3D点云目标检测加追踪后处理</title>
+      <link>http://localhost:1313/worktadiao/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/worktadiao/</guid>
+      <description>多场景项目成果展示视频 训练命令：python tools/train.py &amp;ndash;cfg_file /home/students/master/2023/luojl/td/tools/cfgs/custom_models/centerpoint.yaml 测试命令：python tools/demo2.py &amp;ndash;ckpt /home/students/master/2023/luojl/openpcdet/output/home/students/master/2023/luojl/td/tools/cfgs/custom_models/pointpillar1/default/ckpt/checkpoint_epoch_334.pth 最终测试导出视频图片并且保存一段时间所有结果到json文件命令</description>
+    </item>
     <item>
       <title>寻找最美男友（txttovid 大模型制作）</title>
       <link>http://localhost:1313/changeclothesboy/</link>

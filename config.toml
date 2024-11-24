@@ -10,9 +10,11 @@ paginate = 5 #frontpage pagination
 hasCJKLanguage = true
 
 [outputs]
-home = ["HTML", "RSS", "Algolia"]
+home = ["HTML", "RSS", "Algolia","JSON"]
 
 [params]
+  # 是否开启本地搜索
+  search = true
   header_image = "img/beijing.jpg"
   SEOTitle = "人生初体验 "
   description = "我，无业游民, 安静内向，追求偏爱 | 这里是 Gray 的博客，与你一起探索虚拟世界。"
@@ -30,7 +32,7 @@ home = ["HTML", "RSS", "Algolia"]
   leancloud_app_key = ""
 
   # algolia site search
-  algolia_search = true
+  algolia_search = false
   algolia_appId = ""
   algolia_indexName = ""
   algolia_apiKey = ""
