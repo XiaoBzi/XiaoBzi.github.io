@@ -23,6 +23,15 @@
     <loc>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2025-01-11T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</loc>
+    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/%E9%87%8D%E5%BA%86/</loc>
+    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/recommendplace8/</loc>
+    <lastmod>2025-01-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/hobby1/</loc>
     <lastmod>2024-11-24T00:00:00+00:00</lastmod>
   </url><url>
@@ -50,13 +59,7 @@
     <loc>http://localhost:1313/recommendfood1/</loc>
     <lastmod>2024-10-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</loc>
-    <lastmod>2024-10-07T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/%E7%BE%8E%E9%A3%9F%E6%8E%A8%E8%8D%90/</loc>
-    <lastmod>2024-10-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/%E9%87%8D%E5%BA%86/</loc>
     <lastmod>2024-10-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/%E5%90%88%E5%B7%9D/</loc>

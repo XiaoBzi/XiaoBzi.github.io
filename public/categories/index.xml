@@ -16,6 +16,13 @@
       <description></description>
     </item>
     <item>
+      <title>美景推荐</title>
+      <link>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>爱好小屋</title>
       <link>http://localhost:1313/categories/%E7%88%B1%E5%A5%BD%E5%B0%8F%E5%B1%8B/</link>
       <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
@@ -27,13 +34,6 @@
       <link>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</link>
       <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/%E6%88%91%E7%9A%84%E5%B7%A5%E4%BD%9C/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>美景推荐</title>
-      <link>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</link>
-      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/%E7%BE%8E%E6%99%AF%E6%8E%A8%E8%8D%90/</guid>
       <description></description>
     </item>
     <item>
