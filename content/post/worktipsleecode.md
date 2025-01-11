@@ -81,3 +81,16 @@ gen2,流行工作流常用，连接如下：
 ```html
 https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
 ```
+#### 8. hugo这个模板写post日期的时候要20xx-xx-xx,要加0，不然不显示！而且能重复。
+#### 9. 命令行指定cuda号，跑python代码
+```html
+CUDA_VISIBLE_DEVICES=X python your_script.py
+```
+#### 9. 解决深度学习网络中模块，一个在cpu,一个在cuda xxx
+```html
+device=torch.
+x=x.to(device)
+#创建新张量时也改为：
+conv_weight_hd = torch.zeros(conv_shape[0], conv_shape[1], 3 * 3, device=conv_weight.device, dtype=conv_weight.dtype)
+
+```

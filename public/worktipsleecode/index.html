@@ -285,6 +285,14 @@ gen2,流行工作流常用，连接如下：
 </p>
 <h4 id="7-ipaadapter-里面如果clip-vision-老是报模型和权重文件结构不符要重新下载下面的clip-vision">7. IPAadapter 里面,如果clip vision 老是报模型和权重文件结构不符，要重新下载下面的clip vision</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
+</span></span></code></pre></div><h4 id="8-hugo这个模板写post日期的时候要20xx-xx-xx要加0不然不显示而且能重复">8. hugo这个模板写post日期的时候要20xx-xx-xx,要加0，不然不显示！而且能重复。</h4>
+<h4 id="9-命令行指定cuda号跑python代码">9. 命令行指定cuda号，跑python代码</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>CUDA_VISIBLE_DEVICES=X python your_script.py
+</span></span></code></pre></div><h4 id="9-解决深度学习网络中模块一个在cpu一个在cuda-xxx">9. 解决深度学习网络中模块，一个在cpu,一个在cuda xxx</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>device=torch.
+</span></span><span style="display:flex;"><span>x=x.to(device)
+</span></span><span style="display:flex;"><span>#创建新张量时也改为：
+</span></span><span style="display:flex;"><span>conv_weight_hd = torch.zeros(conv_shape[0], conv_shape[1], 3 * 3, device=conv_weight.device, dtype=conv_weight.dtype)
 </span></span></code></pre></div>
 
                 
@@ -493,7 +501,7 @@ gen2,流行工作流常用，连接如下：
             
              </ul>
 		<p class="copyright text-muted">
-                    Copyright &copy; AIGC小小仓库 2024
+                    Copyright &copy; AIGC小小仓库 2025
                     
                     <br>
                     <a href="https://xiaobzi.github.io/">demo</a> |
