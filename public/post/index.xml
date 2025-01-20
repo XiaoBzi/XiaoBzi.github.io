@@ -6,8 +6,15 @@
     <description>Recent content in Posts on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《被讨厌的勇气》</title>
+      <link>http://localhost:1313/book9/</link>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/book9/</guid>
+      <description>故事前情和简介 是一位青年图书管理员和一位哲人辩论的对话，围绕阿德勒心理学。 * 阿德勒和他的《超越自卑》就是我那段时间生命中的“禅师”。阿德勒的</description>
+    </item>
     <item>
       <title>《蛤蟆先生去看医生》</title>
       <link>http://localhost:1313/book8/</link>
