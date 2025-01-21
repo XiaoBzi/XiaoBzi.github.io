@@ -88,8 +88,12 @@ CUDA_VISIBLE_DEVICES=X python your_script.py
 ```
 #### 9. 解决深度学习网络中模块，一个在cpu,一个在cuda xxx
 ```html
-device=torch.
-x=x.to(device)
+device = next(self.parameters()).device
+        
+        # 确保输入张量 x 和 y 在同一设备上
+        x = x.to(device)
+        y = y.to(device)
+
 #创建新张量时也改为：
 conv_weight_hd = torch.zeros(conv_shape[0], conv_shape[1], 3 * 3, device=conv_weight.device, dtype=conv_weight.dtype)
 

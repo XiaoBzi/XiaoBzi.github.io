@@ -289,8 +289,12 @@ gen2,流行工作流常用，连接如下：
 <h4 id="9-命令行指定cuda号跑python代码">9. 命令行指定cuda号，跑python代码</h4>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>CUDA_VISIBLE_DEVICES=X python your_script.py
 </span></span></code></pre></div><h4 id="9-解决深度学习网络中模块一个在cpu一个在cuda-xxx">9. 解决深度学习网络中模块，一个在cpu,一个在cuda xxx</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>device=torch.
-</span></span><span style="display:flex;"><span>x=x.to(device)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>device = next(self.parameters()).device
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        # 确保输入张量 x 和 y 在同一设备上
+</span></span><span style="display:flex;"><span>        x = x.to(device)
+</span></span><span style="display:flex;"><span>        y = y.to(device)
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>#创建新张量时也改为：
 </span></span><span style="display:flex;"><span>conv_weight_hd = torch.zeros(conv_shape[0], conv_shape[1], 3 * 3, device=conv_weight.device, dtype=conv_weight.dtype)
 </span></span></code></pre></div>
