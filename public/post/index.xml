@@ -6,8 +6,22 @@
     <description>Recent content in Posts on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>《三毛文集》</title>
+      <link>http://localhost:1313/book9/</link>
+      <pubDate>Thu, 20 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/book9/</guid>
+      <description>故事前情和简介 是一位青年图书管理员和一位哲人辩论的对话，围绕阿德勒心理学。 * 阿德勒和他的《超越自卑》就是我那段时间生命中的“禅师”。阿德勒的</description>
+    </item>
+    <item>
+      <title>大模型提示词技巧&#43;案例</title>
+      <link>http://localhost:1313/worktips/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/worktips/</guid>
+      <description>案例分析 实战技巧 决策需求 &amp;ldquo;为降低物流成本，现有两种方案： ①自建区域仓库（初期投入高，长期成本低） ②与第三方合作（按需付费，灵活性</description>
+    </item>
     <item>
       <title>成都世界园艺博览园</title>
       <link>http://localhost:1313/recommendplace11/</link>
