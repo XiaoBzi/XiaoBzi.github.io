@@ -59,3 +59,5 @@ gen2,流行工作流常用，连接如下：
 ```html
 https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
 ```
+#### 8. 手部修复——自动版高质量
+![加载中……](/img/tipcomfy/flux.png)

@@ -6,8 +6,15 @@
     <description>Recent content in Posts on AIGC小小仓库</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Feb 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>搜集到的许多健康简单菜谱分享</title>
+      <link>http://localhost:1313/food3/</link>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/food3/</guid>
+      <description>健康简单菜谱 健康常识 感冒常识 食物营养</description>
+    </item>
     <item>
       <title>《三毛文集》</title>
       <link>http://localhost:1313/book9/</link>

@@ -86,7 +86,7 @@ https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.sa
 ```html
 CUDA_VISIBLE_DEVICES=X python your_script.py
 ```
-#### 9. 解决深度学习网络中模块，一个在cpu,一个在cuda xxx
+#### 10. 解决深度学习网络中模块，一个在cpu,一个在cuda xxx
 ```html
 device = next(self.parameters()).device
         
@@ -97,4 +97,46 @@ device = next(self.parameters()).device
 #创建新张量时也改为：
 conv_weight_hd = torch.zeros(conv_shape[0], conv_shape[1], 3 * 3, device=conv_weight.device, dtype=conv_weight.dtype)
 
+```
+#### 11. yolov11jiaonang,目标检测onnx,推理代码，大框套小框处理方法
+![加载中……](/img/tipcomfy/iouandconf.png)
+#### 12. The command to install mmcv:
+```html
+pip install -U openmim
+mim install mmcv
+```
+#### 13. pytorch 环境配置 一般都装python 3.9:
+```html
+python 3.9 可以适配的pytorch  
+ conda install pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cpuonly -c pytorch
+```
+#### 14. 视频.音频免费提取网站，处理各种格式转换，免费:
+```html
+https://www.zamzar.com/
+
+```
+#### 15. yolov目标检测（v8,v11）如何加入负样本背景图:
+```html
+简单来说，负样本加入数（即neg_num）是为了“在不同的训练轮数/策略下更改负样本加入的数量”
+例如：
+在出现误检模型的基础上，快速训练30轮压误检时：每轮都加负样本
+在重新完整训练300/500轮时：随机不加/加点负样本，以保证模型正负样本都充分学习
+
+而在上述情况下，推荐的neg_num设置为：
+继续训练30轮————正数2
+重新训练300轮————负数负1 （负样本很多时推荐为-1）
+                        
+原文链接：https://blog.csdn.net/qq_41848886/article/details/134289698
+
+```
+#### 16. name：edm2 扩散模型的图片预处理和训练comment :
+```html
+1.python dataset_tool.py convert --source=/share_data/PRDATA/ljl/DDPM/dataset --dest=datasets/img512.zip --resolution=512x512 --transform=center-crop-dhariwal 
+2.python dataset_tool.py encode --source=datasets/img512.zip --dest=datasets/img512-sd.zip 
+3.CUDA_VISIBLE_DEVICES=1,2 torchrun --standalone --nproc_per_node=2 train_edm2.py --outdir=training-runs/00000-edm2-img512-xxs --data=datasets/img512-sd.zip --preset=edm2-img512-xxs
+
+```
+#### 17. name：edm2 使用模型权重产生图片comment seed是张数编号:
+```html
+ CUDA_VISIBLE_DEVICES=3 python generate_images.py --preset=edm2-img512-xs-fid --outdir=out --subdirs --seeds=0-9
 ```
