@@ -61,3 +61,11 @@ https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.sa
 ```
 #### 8. 手部修复——自动版高质量
 ![加载中……](/img/tipcomfy/flux.png)
+#### 9. comfui 模型位置下载
+```html
+sam_vit_h_4b8939.pth模型保存的位置：
+ComfyUI-master\models\sams
+face_yolov8m.pt模型保存的位置：
+ComfyUI-master\models\ultralytics\bboxanimatediff_lightning_8step_comfyui.safetensors 模型保存的位置：  ComfyUI-master\models\animatediff_models
+
+```
