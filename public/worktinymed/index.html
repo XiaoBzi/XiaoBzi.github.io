@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="py小白工作总结，持续更新……" />
-    <meta property="og:title" content="py小白工作总结，持续更新……" />
-    <meta property="twitter:title" content="py小白工作总结，持续更新……" />
+    <meta name="title" content="轻量医学多模态大模型浅测试" />
+    <meta property="og:title" content="轻量医学多模态大模型浅测试" />
+    <meta property="twitter:title" content="轻量医学多模态大模型浅测试" />
     
 
     
-    <meta name="description" content="常用命令总结&#43;可行解决方法">
-    <meta property="og:description" content="常用命令总结&#43;可行解决方法" />
-    <meta property="twitter:description" content="常用命令总结&#43;可行解决方法" />
+    <meta name="description" content="Med-MoE,stage3">
+    <meta property="og:description" content="Med-MoE,stage3" />
+    <meta property="twitter:description" content="Med-MoE,stage3" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Gray,网络日志, 博客, Blog,个人网站,AI, comfyui初体验, 生活, 学习, 美食, 日常">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>py小白工作总结，持续更新…… | 人生初体验 </title>
+    <title>轻量医学多模态大模型浅测试 | 人生初体验 </title>
 
-    <link rel="canonical" href="/worktipsleecode/">
+    <link rel="canonical" href="/worktinymed/">
 
     
     
@@ -190,7 +190,7 @@
                         </a>
                         
                     </div>
-                    <h1>py小白工作总结，持续更新……</h1>
+                    <h1>轻量医学多模态大模型浅测试</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -199,7 +199,7 @@
                                     &#34;甜甜圈&#34;
                              
                             on 
-                            Thursday, January 4, 2024
+                            Sunday, April 13, 2025
                             
                             
                             
@@ -225,109 +225,41 @@
                 post-container">
 
                 
-                <h2 id="命令">命令</h2>
-<h4 id="1-数组常用命令">1. 数组(常用命令)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>nums=[1,1,2,3]
-</span></span><span style="display:flex;"><span>del nums[i]
-</span></span><span style="display:flex;"><span>nums.count(1)
-</span></span></code></pre></div><h4 id="2轮转数组">2.轮转数组</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>nums[:]=nums[-k:] + nums[:-k]
-</span></span></code></pre></div><h4 id="3-摩尔投票同归于尽找比一半人数还要多的票">3. 摩尔投票，同归于尽，找比一半人数还要多的票</h4>
-<p>摩尔pk投票算法(同归于尽算法)是一种用于找出数组中出现次数最多的元素的线性时间算法。它的基本思想是通过不断消除不同的元素对来找出最终的候选元素。
-算法步骤如下：初始化候选元素(candidate)和计数器(count)：首先将候选元素设为数组的第一个元素，计数器设为1。
-遍历数组：从第二个元素开始遍历数组。
-更新候选元素和计数器：对于每个遍历到的元素，如果计数器为0，则将候选元素更新为当前元素，计数器设为1。如果当前元素与候选元素相同，则计数器加1；如果不同，则计数器减1。
-返回候选元素：遍历完成后，候选元素即为出现次数最多的元素。</p>
-<p>Boyer-Moore投票算法的核心在于，对于任意一对不同的元素，如果它们两两消除，最终剩下的元素仍然是出现次数最多的元素。因此，通过遍历数组，将不同的元素两两消除，最终剩下的就是出现次数最多的元素。</p>
-<p>形象化描述：“同归于尽消杀法” ：由于多数超过50%, 比如100个数，那么多数至少51个，剩下少数是49个。</p>
-<p>第一个到来的士兵，直接插上自己阵营的旗帜占领这块高地，此时领主 winner 就是这个阵营的人，现存兵力 count = 1。</p>
-<p>如果新来的士兵和前一个士兵是同一阵营，则集合起来占领高地，领主不变，winner 依然是当前这个士兵所属阵营，现存兵力 count++；</p>
-<p>如果新来到的士兵不是同一阵营，则前方阵营派一个士兵和领主阵营的一个士兵同归于尽。 此时前方阵营兵力count &ndash;。（即使双方都死光，这块高地的旗帜 winner 依然不变，因为已经没有活着的士兵可以去换上自己的新旗帜，但是不用考虑这种情况，因为双方死光，下一个占领的直接就是winner，就是第一种情况。）</p>
-<p>当下一个士兵到来，发现前方阵营已经没有兵力，新士兵就成了领主，winner 变成这个士兵所属阵营的旗帜，现存兵力 count ++。</p>
-<p>就这样各路军阀一直以这种以一敌一同归于尽的方式厮杀下去，直到少数阵营都死光，那么最后剩下的几个必然属于多数阵营，winner 就是多数阵营。（多数阵营 51个，少数阵营只有49个，剩下的2个就是多数阵营的人）</p>
-<h4 id="4-股票随时可买可退是贪心算法">4. 股票随时可买可退是贪心算法</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    def maxProfit(prices):
-</span></span><span style="display:flex;"><span>    total_profit = 0
-</span></span><span style="display:flex;"><span>    for i in range(1, len(prices)):
-</span></span><span style="display:flex;"><span>        if prices[i] &gt; prices[i - 1]:
-</span></span><span style="display:flex;"><span>            total_profit += prices[i] - prices[i - 1]
-</span></span><span style="display:flex;"><span>    return total_profit
-</span></span></code></pre></div><h4 id="5-股票只能买一次是最大减最小">5. 股票只能买一次，是最大减最小</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>def maxProfit(prices):
-</span></span><span style="display:flex;"><span>    if not prices:
-</span></span><span style="display:flex;"><span>        return 0
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    min_price = float(&#39;inf&#39;)  # 初始化为正无穷大
-</span></span><span style="display:flex;"><span>    max_profit = 0  # 初始化最大利润为0
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    for price in prices:
-</span></span><span style="display:flex;"><span>        if price &lt; <span style="color:#ff79c6">min_price:</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#50fa7b">min_price </span><span style="color:#ff79c6">=</span> <span style="color:#f1fa8c">price</span>  # <span style="color:#50fa7b">更新最低价格</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#50fa7b">elif</span> <span style="color:#50fa7b">price</span> <span style="color:#50fa7b">-</span> <span style="color:#50fa7b">min_price</span> &gt; max_profit:
-</span></span><span style="display:flex;"><span>            max_profit = price - min_price  # 更新最大利润
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    return max_profit
-</span></span></code></pre></div><h4 id="6-animatediff-有两个版本">6. AnimateDiff 有两个版本！</h4>
-<p>2个版本的animatediff模块对比
-
-  <img src="/img/tipcomfy/gen.png" alt="加载中……">
-
-
-gen2节点寻找方法
-
-  <img src="/img/tipcomfy/gen2.png" alt="加载中……">
-
-
-gen2,流行工作流常用，连接如下：
-
-  <img src="/img/tipcomfy/gennew.png" alt="加载中……">
-
-</p>
-<h4 id="7-ipaadapter-里面如果clip-vision-老是报模型和权重文件结构不符要重新下载下面的clip-vision">7. IPAadapter 里面,如果clip vision 老是报模型和权重文件结构不符，要重新下载下面的clip vision</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors
-</span></span></code></pre></div><h4 id="8-hugo这个模板写post日期的时候要20xx-xx-xx要加0不然不显示而且能重复">8. hugo这个模板写post日期的时候要20xx-xx-xx,要加0，不然不显示！而且能重复。</h4>
-<h4 id="9-命令行指定cuda号跑python代码">9. 命令行指定cuda号，跑python代码</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>CUDA_VISIBLE_DEVICES=X python your_script.py
-</span></span></code></pre></div><h4 id="10-解决深度学习网络中模块一个在cpu一个在cuda-xxx">10. 解决深度学习网络中模块，一个在cpu,一个在cuda xxx</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>device = next(self.parameters()).device
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        # 确保输入张量 x 和 y 在同一设备上
-</span></span><span style="display:flex;"><span>        x = x.to(device)
-</span></span><span style="display:flex;"><span>        y = y.to(device)
+                <h2 id="med-moe轻量医学多模态大模型使用stage3模型权重-全部大约20g">Med-MoE,轻量医学多模态大模型，使用stage3模型权重 全部大约20G</h2>
+<p>今天调通了一个医学图像多模态大模型，但是发现它的效果很差，不知道是不是我所有模型都是使用的最小的模型导致的。
+以下记录调通模型的一步步，方便以后使用
+代码地址：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>原始：https://github.com/jiangsongtao/Med-MoE
+</span></span><span style="display:flex;"><span>模型权重位置：https://huggingface.co/JsST/TinyMed/tree/main/Stage3/MoE-Tinymed-phi2-llava
+</span></span></code></pre></div><p>使用stage3 就是多模态文图问答模型
+还需要下载clip模型，调用图像塔</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://huggingface.co/openai/clip-vit-large-patch14-336/tree/main
+</span></span></code></pre></div><p>需要修改stage3的图像塔为本地位置 &ldquo;mm_image_tower&rdquo;: &ldquo;/share_data/PRDATA/ljl/Med-MoE-main/clip&rdquo;,
+运行 deepspeed predict.py 测试代码
+问题1：deepspeed未初始化
+解决：添加以下代码，可能还要安装一个包，pip安装不了，conda可以</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span> install -c conda-forge mpi4py
+</span></span></code></pre></div><p>监测deepspeed是否初始化成功代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>def main():
+</span></span><span style="display:flex;"><span>    # 禁用 PyTorch 的默认初始化（如果需要）
+</span></span><span style="display:flex;"><span>   disable_torch_init()
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>#创建新张量时也改为：
-</span></span><span style="display:flex;"><span>conv_weight_hd = torch.zeros(conv_shape[0], conv_shape[1], 3 * 3, device=conv_weight.device, dtype=conv_weight.dtype)
-</span></span></code></pre></div><h4 id="11-yolov11jiaonang目标检测onnx推理代码大框套小框处理方法">11. yolov11jiaonang,目标检测onnx,推理代码，大框套小框处理方法</h4>
-<p>
-  <img src="/img/tipcomfy/iouandconf.png" alt="加载中……">
-
-</p>
-<h4 id="12-the-command-to-install-mmcv">12. The command to install mmcv:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>pip install -U openmim
-</span></span><span style="display:flex;"><span>mim install mmcv
-</span></span></code></pre></div><h4 id="13-pytorch-环境配置-一般都装python-39">13. pytorch 环境配置 一般都装python 3.9:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>python 3.9 可以适配的pytorch  
-</span></span><span style="display:flex;"><span> conda install pytorch==1.9.0 torchvision==0.10.0 torchaudio==0.9.0 cpuonly -c pytorch
-</span></span></code></pre></div><h4 id="14-视频音频免费提取网站处理各种格式转换免费">14. 视频.音频免费提取网站，处理各种格式转换，免费:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>https://www.zamzar.com/
-</span></span></code></pre></div><h4 id="15-yolov目标检测v8v11如何加入负样本背景图">15. yolov目标检测（v8,v11）如何加入负样本背景图:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>简单来说，负样本加入数（即neg_num）是为了“在不同的训练轮数/策略下更改负样本加入的数量”
-</span></span><span style="display:flex;"><span>例如：
-</span></span><span style="display:flex;"><span>在出现误检模型的基础上，快速训练30轮压误检时：每轮都加负样本
-</span></span><span style="display:flex;"><span>在重新完整训练300/500轮时：随机不加/加点负样本，以保证模型正负样本都充分学习
+</span></span><span style="display:flex;"><span>   # 初始化 DeepSpeed 分布式通信
+</span></span><span style="display:flex;"><span>   import deepspeed
+</span></span><span style="display:flex;"><span>   deepspeed.init_distributed(dist_backend=&#39;nccl&#39;)  # 使用 NCCL 后端（适用于 GPU）
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>而在上述情况下，推荐的neg_num设置为：
-</span></span><span style="display:flex;"><span>继续训练30轮————正数2
-</span></span><span style="display:flex;"><span>重新训练300轮————负数负1 （负样本很多时推荐为-1）
-</span></span><span style="display:flex;"><span>                        
-</span></span><span style="display:flex;"><span>原文链接：https://blog.csdn.net/qq_41848886/article/details/134289698
-</span></span></code></pre></div><h4 id="16-nameedm2-扩散模型的图片预处理和训练comment-">16. name：edm2 扩散模型的图片预处理和训练comment :</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>1.python dataset_tool.py convert --source=/share_data/PRDATA/ljl/DDPM/dataset --dest=datasets/img512.zip --resolution=512x512 --transform=center-crop-dhariwal 
-</span></span><span style="display:flex;"><span>2.python dataset_tool.py encode --source=datasets/img512.zip --dest=datasets/img512-sd.zip 
-</span></span><span style="display:flex;"><span>3.CUDA_VISIBLE_DEVICES=1,2 torchrun --standalone --nproc_per_node=2 train_edm2.py --outdir=training-runs/00000-edm2-img512-xxs --data=datasets/img512-sd.zip --preset=edm2-img512-xxs
-</span></span></code></pre></div><h4 id="17-nameedm2-使用模型权重产生图片comment-seed是张数编号">17. name：edm2 使用模型权重产生图片comment seed是张数编号:</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span> CUDA_VISIBLE_DEVICES=3 python generate_images.py --preset=edm2-img512-xs-fid --outdir=out --subdirs --seeds=0-9
-</span></span></code></pre></div>
+</span></span><span style="display:flex;"><span>   # 检查通信后端是否初始化成功
+</span></span><span style="display:flex;"><span>   from deepspeed.comm import comm
+</span></span><span style="display:flex;"><span>   if comm.cdb is None:
+</span></span><span style="display:flex;"><span>       raise RuntimeError(&#34;DeepSpeed communication backend is not initialized.&#34;)
+</span></span><span style="display:flex;"><span>   else:
+</span></span><span style="display:flex;"><span>       print(&#34;DeepSpeed communication backend initialized successfully.&#34;)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>   # 加载图像、输入文本、模型路径等参数
+</span></span></code></pre></div><p>还要好多是调不出来图像塔对问题
+需要在moellava/model/builder.py里面将from deepspeed.moe.layer import MoE打开
+我将会把代码上传到自己的GitHub里面。</p>
+
 
                 
 
@@ -336,13 +268,13 @@ gen2,流行工作流常用，连接如下：
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/recommendplace/" data-toggle="tooltip" data-placement="top" title="努力制作更新中敬请期待……">&larr;
+                        <a href="/food3/" data-toggle="tooltip" data-placement="top" title="搜集到的许多健康简单菜谱分享">&larr;
                             Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/recommendplace1/" data-toggle="tooltip" data-placement="top" title="重庆铜锣山矿山公园">Next
+                        <a href="/recommendplace12/" data-toggle="tooltip" data-placement="top" title="华莹山.天意谷">Next
                             Post &rarr;</a>
                     </li>
                     
