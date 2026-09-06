@@ -10,7 +10,7 @@ published: true
 tags:
     - ubuntu 
 URL: "/hobby1/"
-categories: [ "爱好小屋" ]    
+categories: [ "特别的TA" ]    
 image1: "/p1.jpg"
 ---
 {{<bilibili src="//player.bilibili.com/player.html?isOutside=true&aid=113537393498879&bvid=BV15bBxYeEQj&cid=26961251862&p=1">}}
